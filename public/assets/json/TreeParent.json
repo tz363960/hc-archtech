@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "text": "2019年",
+        "parent":"#",
+        "type": "folder"
+    },
+    {
+        "id": 2,
+        "text": "1月",
+        "parent":"1",
+        "type": "folder"
+    },
+    {
+        "id": 3,
+        "text": "6日周报.pdf",
+        "parent":"2",
+        "type": "file"
+    }
+]

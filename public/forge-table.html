@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>forge Table</title>
+    <link rel="shortcut icon" href="static/images/v2.ico">
+
+    <!-- Styles -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="static/css/lib/jsgrid/jsgrid-theme.min.css" rel="stylesheet" />
+    <link href="static/css/lib/jsgrid/jsgrid.min.css" type="text/css" rel="stylesheet" />
+    <link href="static/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="static/css/lib/helper.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/floatStyle.css" rel="stylesheet">
+    <link href="static/css/lib/datetimepicker/jquery.datetimepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css" />
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.*/style.css">
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.*/viewer3D.js"></script>
+    <!-- jquery vendor -->
+    <script src="static/js/jquery-3.4.1.js"></script>
+    <script src="static/js/lib/jquery.nanoscroller.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+    <script src="static/js/lib/datetimepicker/jquery.datetimepicker.js"></script>
+
+
+    <style>
+        #appBuckets {
+            overflow: auto;
+            width: 100%;
+            height: calc(100vh - 450px);
+        }
+
+        #MyViewerDiv {
+            width: 100%;
+            height: calc(100vh - 400px);
+        }
+
+        .toolbarNavigatorButton {
+            background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/navicon.png);
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .multiviewerButton {
+            background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/dashboard.png);
+            background-size: 24px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .multiviewerButtonExtensionIcon {
+            background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/dashboard.png);
+            background-size: 24px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body style="overflow: scroll;">
+    <!-- /# mycode -->
+    <script src="static/js/forgeControl/viewer.js"></script>
+    <script src="static/js/forgeControl/ForgeTree.js"></script>
+    <!-- <script src="static/js/extensions/pointcloud.js"></script> -->
+    <script src="static/js/extensions/CustomPropertyPanel.js"></script>
+    <script src="static/js/extensions/issues.js"></script>
+    <script src="static/js/extensions/heatmap.js"></script>
+    <script src="static/js/extensions/drawing.js"></script>
+    <script src="static/js/extensions/FloorExplodeExtension.js"></script>
+    <script src="static/js/extensions/multiviewer.js"></script>
+
+    <!-- /# sidebar -->
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="logo"><a href="index.html">
+                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>恒城科技</span></a></div>
+                <ul>
+                    <li class="label">菜单</li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-home fa-fw"></i> 首页 </a>
+                    </li>
+                    <li class="label">功能</li>
+                    <li>
+                        <a href="forge-table.html"><i class="fa fa-desktop"></i> BIM总览
+                            <span class="sidebar-collapse-icon "></span></a>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> 施工数据 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="cost-control.html">成本管控</a></li>
+                            <li><a href="material-tracking.html">物料跟踪</a></li>
+                            <li><a href="construction-progress.html">施工进度</a></li>
+                            <li><a href="quality-control.html">质量控制</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-file"></i> 项目资料 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="design-files.html">设计资料</a></li>
+                            <li><a href="construction-files.html">施工资料</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-crosshairs"></i> 数字运维 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="digital-screen.html" target="_blank">数字大屏</a></li>
+                            <li><a href="video-monitor.html" target="_blank">视频监控</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-cog"></i> 系统设置 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="stuff-list.html">组织结构</a></li>
+                            <li><a href="weekly-report.html">电子周报</a></li>
+                            <li><a href="index.html">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- /# header -->
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="float-left" style="text-align:left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="float-right">-->
+                <div class="col-lg-4">
+                    <div class="float-right" style="text-align:right">
+                        <div class="dropdown dib">
+                            <div class="header-icon">
+                                <span class="user-avatar">
+                                    王大宝
+                                    <i class="fa fa-user-circle-o" style="font-size:24px"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /# content-wrap -->
+    <div class="content-wrap">
+        <div class="main">
+            <div id="container-fluid">
+                <!-- forge模型 -->
+                <section>
+                    <div class="row fill">
+                        <div class="col-lg-3 fill" style="padding:0 0 0 10px;">
+                            <div class="panel panel-default fill">
+                                <div class="panel-heading" data-toggle="tooltip">
+                                    账号 &amp; 模型
+                                    <span id="refreshBuckets" class="glyphicon glyphicon-refresh"
+                                        style="cursor: pointer"></span>
+                                    <button class="btn btn-xs btn-info" style="float: right" id="showFormCreateBucket"
+                                        data-toggle="modal" data-target="#createBucketModal">
+                                        <span class="glyphicon glyphicon-folder-close"></span> 创建文件夹
+                                    </button>
+                                </div>
+                                <div id="appBuckets">
+                                    tree here
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9" style="padding:0 0 0 0;">
+                            <div id="MyViewerDiv"></div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 传文件 -->
+                <form id="uploadFile" method='post' enctype="multipart/form-data" style="height: 0px">
+                    <input id="hiddenUploadField" type="file" name="theFile" style="visibility:hidden" />
+                </form>
+
+                <!-- 创建bucketkey的框 -->
+                <div class="modal fade" id="createBucketModal" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">Create new bucket</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" id="newBucketKey" class="form-control"> 出于演示目的，对象（文件）不会自动转换。
+                                上传后，右键单击对象并选择“转换”。注意：从技术上讲，您的bucket名称需要在整个平台上具有全局唯一性，
+                                为了使本教程的内容简单化，默认情况下，您的客户机ID将被预先设置为bucket名称，然后被UI屏蔽。因此，
+                                您只需确保您的bucket名称在当前的forge应用程序中是唯一的。
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" id="createNewBucket">Go ahead, create the
+                                    bucket</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- forge模型 -->
+
+                <!-- tabs -->
+                <ul class="nav nav-tabs" role="tablist" style="padding:0 0 0 10px;">
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab"
+                            aria-selected="true"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span
+                                class="hidden-xs-down">事件</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab"
+                            aria-selected="false"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span
+                                class="hidden-xs-down">文件</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab"
+                            aria-selected="false"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span
+                                class="hidden-xs-down">消息</span></a> </li>
+                    <li class="nav-item" id="CoDesign"> <a class="nav-link" aria-selected="false"><span
+                                class="hidden-sm-up"><i class="ti-pencil-alt"></i></span> <span
+                                class="hidden-xs-down">录入</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#wrong" role="tab"
+                            aria-selected="false"><span class="hidden-sm-up"><i class="fa fa-bell-o"></i></span> <span
+                                class="hidden-xs-down">通知</span></a> </li>
+                </ul>
+                <!-- tabs -->
+
+                <div class="tab-content tabcontent-border">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="jsgrid-table-panel">
+                                    <div id="jsGrid"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane p-20" id="profile" role="tabpanel">2</div>
+                    <div class="tab-pane p-20" id="messages" role="tabpanel">3</div>
+                    <div class="tab-pane" id="wrong" role="tabpanel">
+                        <section id="main-content">
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <div class="card-body">
+                                        <ul class="timeline">
+                                            <li>
+                                                <div class="timeline-badge warning"><i class="fa fa-warning"></i>
+                                                </div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">现在有10条待处理通知，其中包括4条设计问题，3条生产问题，3条施工问题
+                                                        </h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>10 minutes ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="timeline-badge warning"><i class="fa fa-warning"></i>
+                                                </div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">秦正根给你派发了任务
+                                                        </h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>10 hours ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="timeline-badge danger"><i class="fa fa-times-circle-o"></i>
+                                                </div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">你的图纸有五处修改</h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>30 hours ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="timeline-badge danger"><i class="fa fa-times-circle-o"></i>
+                                                </div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">周建华给你分配了任务
+                                                        </h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>2 days ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="timeline-badge warning"><i class="fa fa-warning"></i>
+                                                </div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h5 class="timeline-title">你有一项会议日程 </h5>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>3 days ago</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- /# column -->
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /# 浮动窗口 -->
+    <div id="my-float-window"></div>
+    <div id="co-design-window"></div>
+
+    <!-- nano scroller -->
+    <script src="static/js/lib/menubar/sidebar.js"></script>
+    <script src="static/js/lib/preloader/pace.min.js"></script>
+
+    <!-- JS Grid Scripts Start,db.js为数据库,可用python生成json格式数据以导入,html加载是从上到下依次加载-->
+    <script src="static/js/lib/jsgrid/forgedb.js" charset="UTF-8"></script>
+    <script src="static/js/lib/jsgrid/jsgrid.core.js"></script>
+    <script src="static/js/lib/jsgrid/jsgrid.load-indicator.js"></script>
+    <script src="static/js/lib/jsgrid/jsgrid.load-strategies.js"></script>
+    <script src="static/js/lib/jsgrid/jsgrid.sort-strategies.js"></script>
+    <script src="static/js/lib/jsgrid/jsgrid.field.js"></script>
+    <script src="static/js/lib/jsgrid/fields/jsgrid.field.text.js"></script>
+    <script src="static/js/lib/jsgrid/fields/jsgrid.field.number.js"></script>
+    <script src="static/js/lib/jsgrid/fields/jsgrid.field.select.js"></script>
+    <script src="static/js/lib/jsgrid/fields/jsgrid.field.checkbox.js"></script>
+    <script src="static/js/lib/jsgrid/fields/jsgrid.field.control.js"></script>
+    <script src="static/js/lib/jsgrid/jsgrid-initcxn.js"></script>
+    <!-- JS Grid Scripts End-->
+    <script src="static/js/scripts.js"></script>
+
+    <!-- scripit init-->
+    <script>
+
+    </script>
+</body>
+
+</html>

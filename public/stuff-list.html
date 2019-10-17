@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JS Grid Table</title>
+
+    <!-- Styles -->
+    <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/lib/jsgrid/jsgrid-theme.min.css" rel="stylesheet" />
+    <link href="assets/css/lib/jsgrid/jsgrid.min.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="assets/css/lib/helper.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Organization Styles -->
+    <link rel="stylesheet" href="assets/stuff-list/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/stuff-list/jquery.orgchart.css">
+    <link rel="stylesheet" href="assets/stuff-list/style.css">
+
+
+    <style>
+        @import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+
+        p {
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        /* main {
+            min-width: 320px;
+            max-width: 2000px;
+            height: 600px;
+            padding: 25px;
+            margin: 0 auto;
+            background: #fff;
+        } */
+
+        section {
+            display: none;
+            padding: 0px 0 0;
+            border-top: 1px solid #ddd;
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #bbb;
+            border: 1px solid transparent;
+        }
+
+        label:before {
+            font-family: fontawesome;
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        label[for*='1']:before {
+            content: '\f1cb';
+        }
+
+        label[for*='2']:before {
+            content: '\f17d';
+        }
+
+        label[for*='3']:before {
+            content: '\f16b';
+        }
+
+        label[for*='4']:before {
+            content: '\f1a9';
+        }
+
+        label:hover {
+            color: #888;
+            cursor: pointer;
+        }
+
+        input:checked+label {
+            color: #555;
+            border: 1px solid #ddd;
+            border-top: 2px solid orange;
+            border-bottom: 1px solid #fff;
+        }
+
+        #tab1:checked~#content1,
+        #tab2:checked~#content2,
+        #tab3:checked~#content3,
+        #tab4:checked~#content4 {
+            display: block;
+        }
+
+        @media screen and (max-width: 650px) {
+            label {
+                font-size: 0;
+            }
+
+            label:before {
+                margin: 0;
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            label {
+                padding: 15px;
+            }
+        }
+    </style>
+    <script src="assets/js/prefixfree.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="logo"><a href="index.html">
+                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>恒城科技</span></a></div>
+                <ul>
+                    <li class="label">菜单</li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-home fa-fw"></i> 首页 
+                            <span class="sidebar-collapse-icon "></span></a>
+                    </li>
+                    <li class="label">功能</li>
+                    <li>
+                        <a href="forge-table.html"><i class="fa fa-desktop"></i> BIM总览
+                            <span class="sidebar-collapse-icon "></span></a>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> 施工数据 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="cost-control.html">成本管控</a></li>
+                            <li><a href="construction-progress.html">施工进度</a></li>
+                            <li><a href="material-tracking.html">物料追踪</a></li>
+                            <li><a href="quality-safety.html">质量安全</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-file"></i> 项目资料 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="design-files.html">设计资料</a></li>
+                            <li><a href="construction-files.html">施工资料</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-crosshairs"></i> 数字运维 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="digital-screen.html" target="_blank">数字大屏</a></li>
+                            <li><a href="video-monitor.html" target="_blank">视频监控</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-cog"></i> 系统设置 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="stuff-list.html">组织结构</a></li>
+                            <li><a href="weekly-report.html">电子周报</a></li>
+                            <li><a href="index.html">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- /# sidebar -->
+
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="float-left" style="text-align:left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="float-right">-->
+                <div class="col-lg-10">
+                    <div class="float-right" style="text-align:right">
+                        <div class="dropdown dib">
+                            <div class="header-icon">
+                                <span class="user-avatar">
+                                    王大宝
+                                    <i class="fa fa-user-circle-o" style="font-size:24px"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div id="main-content">
+                    <main>
+                        <input id="tab1" type="radio" name="tabs" checked>
+                        <label for="tab1">组织结构</label>
+                        <input id="tab2" type="radio" name="tabs">
+                        <label for="tab2">单位管理</label>
+                        <input id="tab3" type="radio" name="tabs">
+                        <label for="tab3">账号管理</label>
+  
+                        <section id="content1">
+                            <div class="col-lg-12" style="padding-top:0px ">
+                                <div class="card">
+                                    <div id="chart-container"></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="content2">
+                            <div class="col-lg-12" style="padding-top:0px ">
+                                <div class="card">
+                                    <div class="jsgrid-table-panel">
+                                        <div id="jsGrid_enterprise"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="content3">
+                            <div class="col-lg-12" style="padding-top:0px ">
+                                <div class="card">
+                                    <div class="jsgrid-table-panel">
+                                        <div id="jsGrid_stuff"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- jquery vendor -->
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <!-- nano scroller -->
+    <script src="assets/js/lib/menubar/sidebar.js"></script>
+    <script src="assets/js/lib/preloader/pace.min.js"></script>
+    <!-- sidebar -->
+
+    <!-- bootstrap -->
+
+
+
+    <!-- JS Grid Scripts Start-->
+    <script src="assets/js/lib/jsgrid/db_stuff.js"></script>
+    <script src="assets/js/lib/jsgrid/db_enterprise.js"></script>   
+    <script src="assets/js/lib/jsgrid/jsgrid.core.js"></script>
+    <script src="assets/js/lib/jsgrid/jsgrid.load-indicator.js"></script>
+    <script src="assets/js/lib/jsgrid/jsgrid.load-strategies.js"></script>
+    <script src="assets/js/lib/jsgrid/jsgrid.sort-strategies.js"></script>
+    <script src="assets/js/lib/jsgrid/jsgrid.field.js"></script>
+    <script src="assets/js/lib/jsgrid/fields/jsgrid.field.text.js"></script>
+    <script src="assets/js/lib/jsgrid/fields/jsgrid.field.number.js"></script>
+    <script src="assets/js/lib/jsgrid/fields/jsgrid.field.select.js"></script>
+    <script src="assets/js/lib/jsgrid/fields/jsgrid.field.checkbox.js"></script>
+    <script src="assets/js/lib/jsgrid/fields/jsgrid.field.control.js"></script>
+    <script src="assets/js/lib/jsgrid/jsgrid-init-stuff.js"></script>
+    <script src="assets/js/lib/jsgrid/jsgrid-init-enterprise.js"></script>
+
+    <!-- JS Grid Scripts End-->
+
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <!-- scripit init-->
+    <script type="text/javascript" src="assets/stuff-list/html2canvas.min.js"></script>
+    <script type="text/javascript" src="assets/stuff-list/jquery.orgchart.js"></script>
+    <script type="text/javascript" src="assets/stuff-list/orgdatabase.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/start.js",
+            "env": {
+                // "FORGE_CLIENT_ID": "EAImUtWq2VNlA3VAA7ZBWYdJ2KLZksiU",
+                // "FORGE_CLIENT_SECRET": "zzXT3Ix7dt76Bprd",
+                //export FORGE_CLIENT_ID=oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m
+                //export FORGE_CLIENT_SECRET=nA8YA1KcR5OjkDrG
+                //./natapp -authtoken=31f2d767501f4b83
+                //forever start start.js
+                "FORGE_CLIENT_ID": "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m",
+                "FORGE_CLIENT_SECRET": "nA8YA1KcR5OjkDrG",
+                "FORGE_CALLBACK_URL": "http://localhost:3000/api/forge/callback/oauth"
+            }
+        }
+    ]
+}

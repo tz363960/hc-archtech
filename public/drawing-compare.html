@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Compare Two DWGs</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+
+    <style>
+        .test-padding {
+            left: 10%;
+            top: 50px;
+            width: 80%;
+            height: 400px;
+            position: relative;
+        }
+    </style>
+    <!-- <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.*/viewer3D.min.js"></script>
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.*/style.min.css"
+        type="text/css"> -->
+
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.min.css?v=v6.*" type="text/css">
+    <script language="JavaScript" src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js?v=v6.*"></script>
+    <script src="docs/extensions/PixelCompare/PixelCompare.min.js"></script>
+    <script src="docs/extensions/PixelCompare/PixelCompare.css"></script>
+    <!-- <script src="docs/extensions/PixelCompare/PixelCompareTool.js"></script> -->
+    <script src="docs/app.js"></script>
+</head>
+
+<body onload="initializeViewer();" style="margin:0">
+    <div id="forge2DViewer" style="margin:0">
+    </div>
+</body>
+
+</html>

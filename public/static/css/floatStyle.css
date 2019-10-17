@@ -1,0 +1,592 @@
+#cc-modal-mask {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1003;
+            background-color: rgba(55, 55, 55, 0.8);
+            text-align: center;
+        }
+
+        #cc-modal-mask.m-open {
+            display: flex;
+            -webkit-animation: fadeIn 0.3s;
+            animation: fadeIn 0.3s;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cc-modal {
+            position: relative;
+            display: inline-block;
+            z-index: 1004;
+            margin: auto;
+            width: 80%;
+            background-color: #fff;
+            padding: 15px;
+            min-height: 500px;
+            max-width: 1300px;
+            border: 1px solid #565656;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        #cc-modal.small-modal {
+            max-width: 800px;
+            max-height: 100%;
+        }
+
+        #cc-modal .btn {
+            border-radius: 2px;
+        }
+
+        #cc-modal.image-mode {
+            width: auto;
+            max-height: 90%;
+        }
+
+        #cc-modal.image-mode img {
+            max-height: 600px;
+            max-width: 100%;
+        }
+
+        #cc-modal.issue-detail.image-mode {
+            padding: 15px 0;
+        }
+
+        #cc-modal.add-issue,
+        #cc-modal.issue-columns {
+            max-width: 700px;
+            max-height: 100%;
+        }
+
+        #cc-modal.add-issue #Title {
+            max-width: 100%;
+        }
+
+        #cc-modal-mask.isFullscreen {
+            z-index: 2147483647;
+        }
+
+        #modal-content {
+            position: relative;
+            overflow: hidden;
+            max-height: 100%;
+            overflow-y: auto;
+        }
+
+        #cc-modal.issue-detail>#modal-content {
+            min-height: 500px;
+        }
+
+        #cc-modal.add-issue .nav-tabs>li a {
+            padding: 4px 14px;
+            border-radius: 0;
+        }
+
+        #cc-modal.add-issue .ai-tabs>div {
+            display: none;
+        }
+
+        #cc-modal.add-issue .ai-tabs>.active {
+            display: block;
+        }
+
+        #ai-attachment {
+            min-height: 350px;
+        }
+
+        #dropZone {
+            border: #999 dashed 1px;
+        }
+
+        #upload-box {
+            margin-top: 25px;
+        }
+
+        #upload-box ul li {
+            height: 40px;
+            padding: 5px;
+            margin-bottom: 1px;
+        }
+
+        #upload-box ul li p i {
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        #upload-box ul li p {
+            top: 10px;
+            color: #505050;
+        }
+
+        #upload-box ul li span {
+            top: 10px;
+        }
+
+        #upload-box ul li canvas {
+            top: 5px;
+        }
+
+        #upload-box.edit-attachments ul li p {
+            font-size: 12px;
+            max-width: 250px;
+        }
+
+        #column-list {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #column-list>li {
+            padding: 5px 15px 5px 10px;
+            max-width: 350px;
+        }
+
+        #column-list>.sortable:hover {
+            cursor: move;
+            background-color: #e3effd;
+        }
+
+        #column-list .remove-column {
+            cursor: pointer;
+            padding: 2px;
+            font-size: 16px;
+        }
+
+        #column-list select {
+            padding: 3px;
+            margin-top: 0px !important;
+            min-width: 250px;
+        }
+
+        select.disabled {
+            background-color: #e0dede;
+            color: gray;
+        }
+
+        .check-date.expired {
+            color: red;
+            font-weight: 600;
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+       
+
+        #cc-modal.issue-detail #upload-box {
+            margin-top: 7px;
+        }
+
+        #cc-modal.issue-detail #dropZone {
+            padding: 10px;
+        }
+
+        
+
+        
+        
+        #cc-modal.issue-detail {
+            padding: 0;
+        }
+
+        #cc-modal.issue-detail #Title {
+            width: 100%;
+            max-width: 100%;
+            font-size: 18px;
+            padding: 2px;
+        }
+
+        #cc-modal.issue-detail #DueDate {
+            padding: 2px;
+            height: auto;
+            margin-top: 4px;
+        }
+
+        #cc-modal.issue-detail #Title.title-edit {
+            width: 80%;
+            min-width: 350px;
+        }
+
+        #cc-modal input.select2-selection--multiple {
+            border: solid #ccc 1px;
+        }
+
+        #cc-modal input.select2-search__field {
+            border: none;
+            width: 100%;
+        }
+
+        #cc-modal .select2.select2-container {
+            width: 100% !important;
+        }
+
+        #issue-actions {
+            position: absolute;
+            right: 100px;
+            top: 10px;
+            z-index: 1005;
+        }
+
+        #issue-actions .btn {
+            border-radius: 2px;
+            padding: 3px 6px;
+        }
+
+        button#issue-edit-mode,
+        button#issue-history-mode {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-radius: 0px !important;
+            padding: 6px 12px;
+            border: none;
+            z-index: 1005;
+            width: 70px;
+        }
+
+        button#issue-history-mode {
+            right: 70px;
+            font-size: 16px;
+            color: #000;
+            background-color: #d8d8d8;
+            padding: 3px 10px;
+            width: auto;
+        }
+
+        button#issue-history-mode:hover {
+            background-color: #a7a7a7;
+        }
+
+        a#close-modal {
+            display: inline-block;
+            position: absolute;
+            -moz-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            top: 0;
+            right: 10px;
+            font-size: 25px;
+            color: #585858;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a#close-modal:hover {
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+
+        #issue-header {
+            height: 120px;
+            background-color: #ececec;
+            border-bottom: 1px solid #d2d2d2;
+            margin-top: -7px;
+            padding-top: 10px;
+        }
+
+        #issue-header.edit-mode {
+            height: 160px;
+        }
+
+        #issue-header.edit-mode #issue-head {
+            padding-right: 250px;
+        }
+
+        #issue-header.edit-mode input {
+            width: 100%;
+        }
+
+        #issue-thumbnail {
+            position: relative;
+            height: 100%;
+        }
+
+        #issue-thumbnail>img {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        a#enlarge-thumbnail,
+        a#close-enlarged {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: #000;
+            background-color: rgba(232, 231, 231, 0.70);
+            border-radius: 2px;
+            padding: 1px 3px;
+            font-size: 12px;
+        }
+
+        a#enlarge-thumbnail:hover {
+            font-size: 14px;
+        }
+
+        a#close-enlarged {
+            font-size: 18px;
+            top: 10px;
+            left: 10px;
+        }
+
+        #issue-head {
+            display: inline-block;
+            padding-left: 15px !important;
+            overflow: hidden;
+        }
+
+        #attachments-container {
+            overflow: hidden;
+            max-height: 180px;
+            width: 100%;
+            overflow-y: auto;
+        }
+
+        #attachments-container table tbody>tr>td {
+            padding: 2px;
+            border-top: 0px;
+        }
+
+        .issue-timestamp {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .issue-description {
+            word-wrap: break-word;
+            white-space: pre-line;
+            overflow: hidden;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        #comment-list {
+            max-height: 300px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .issue-comment {
+            padding: 5px 0;
+            border-bottom: 1px dotted lightgray;
+        }
+
+        .issue-comment .issue-timestamp {
+            font-size: 10px;
+            padding-left: 5px;
+        }
+
+        .issue-comment>.user-avatar {
+            display: inline-block;
+            vertical-align: top;
+            padding-top: 5px;
+            width: 25px;
+            border-radius: 2px;
+        }
+
+        .issue-comment>.comment-detail {
+            display: inline-block;
+            padding-left: 10px;
+            width: 90%;
+            max-width: calc(100% - 30px);
+        }
+
+        .issue-comment>.user-avatar img {
+            max-width: 100%;
+            border-radius: 2px;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .issue-comment pre {
+            white-space: pre-line;
+            font-family: inherit;
+            border: none;
+            margin-top: 4px;
+            margin-bottom: 3px;
+            border-radius: 4px;
+        }
+
+        .comment-creator {
+            font-weight: 500;
+            color: rgb(55, 55, 55);
+        }
+
+        #new-comment>div {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #new-comment .user-avatar {
+            width: 25px;
+            height: 25px;
+            vertical-align: top;
+            margin-right: 7px;
+        }
+
+        #comment-input {
+            width: calc(100% - 70px);
+        }
+
+        #new-comment .user-avatar img {
+            max-width: 100%;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        #new-comment textarea {
+            display: block;
+            border-color: #d8d8d8;
+            padding: 6px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        #comment-actions>* {
+            display: inline-block;
+            vertical-align: top;
+            padding: 2px 25px;
+            margin-top: 2px;
+            font-size: 12px;
+        }
+
+        #comment-attachment {
+            margin-top: 0;
+            padding-right: 5px;
+            font-size: 18px;
+            color: gray;
+        }
+
+        #comment-attachment:hover {
+            color: #337ab7;
+        }
+
+        #comment-attachments {
+            display: inline-block;
+            color: #337ab7;
+        }
+
+        #comment-attachments>span:before {
+            font-family: fontawesome;
+            content: "\f016";
+            padding-right: 5px;
+        }
+
+        #cc-modal h3 {
+            font-size: 22px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-top: 0;
+        }
+
+        #cc-modal h4 {
+            font-weight: 400;
+            border-bottom: 1px solid #cfcfcf;
+            padding-bottom: 5px;
+        }
+
+        #cc-modal h4 .toggle-issue-detail {
+            float: right;
+            font-size: 16px;
+            margin-top: 3px;
+            margin-right: 2px;
+        }
+
+        #modal-content .row {
+            padding: 7px 0;
+        }
+
+        table.issue-detail td:nth-child(1) {
+            padding: 1px 15px 1px 0;
+            color: #797979;
+        }
+
+        #issue-metadata>div {
+            display: inline-block;
+        }
+
+        #issue-metadata .issue-assignedto {
+            padding-top: 5px;
+            vertical-align: bottom;
+        }
+
+        #issue-metadata .issue-assignedto>img {
+            display: inline-block;
+            width: 20px;
+            margin-right: 3px;
+        }
+
+        #issue-labels {
+            padding-left: 10px;
+        }
+
+        #issue-labels-edit {
+            vertical-align: top;
+            margin-top: 4px;
+        }
+
+        #issue-labels-edit>.form-group {
+            display: inline-block;
+            width: 80%;
+        }
+
+        .issue-label {
+            font-size: 12px;
+            padding: 2px 5px;
+            color: #fff;
+            /*background-color: #afafaf;*/
+            background-color: #34bad8;
+            margin-right: 2px;
+            border-radius: 2px;
+        }
+
+        .issue-detail-link {
+            font-size: 14px;
+        }
+
+        a.issue-detail-link:hover {
+            text-decoration: underline;
+            color: #337ab7
+        }
+
+        .toggle_section.id_closed {
+            display: none;
+        }
+
+        .issue-iid {
+            color: #676767;
+            font-size: 18px;
+        }

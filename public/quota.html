@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>埃塞俄比亚Zemen银行大数据</title>
+    <link href="assets/digital-screen/styles/common.css" rel="stylesheet">
+    <script src="assets/digital-screen/scripts/Plugin/jquery-3.3.1.min.js"></script>
+    <script src="assets/digital-screen/scripts/Plugin/echarts.min.js"></script>
+    <script src="assets/digital-screen/scripts/Plugin/bmap.min.js"></script>
+    <script src="assets/digital-screen/scripts/common.js"></script>
+    <script src="assets/digital-screen/scripts/quota.js"></script>
+</head>
+
+<body>
+    <!--顶部-->
+    <header class="header left">
+        <div class="left nav">
+            <ul>
+                <li><i class="nav_1"></i><a href="digital-screen.html">采集概况</a> </li>
+                <li class="nav_active"><i class="nav_2"></i><a href="quota.html">指标分析</a> </li>
+                <li><i class="nav_3"></i><a href="trend.html">趋势分析</a> </li>
+                <li><i class="nav_4"></i><a href="vip-list.html">大客户一览表</a> </li>
+            </ul>
+        </div>
+        <div class="header_center left" style="position:relative">
+
+            <h2><strong>埃塞俄比亚Zemen银行大数据展示</strong></h2>
+
+        </div>
+        <div class="right nav text_right">
+            <ul>
+
+            </ul>
+        </div>
+
+    </header>
+    <!--内容部分-->
+    <div class="con left">
+        <!--数据总概-->
+        <div class="con_div">
+            <div class="con_div_text left">
+                <div class="con_div_text01 left">
+                    <img src="assets/digital-screen/images/info_7.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>全年业务金额(M$)</p>
+                        <p>1235</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="assets/digital-screen/images/info_8.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>当月业务金额(M$)</p>
+                        <p>235</p>
+                    </div>
+                </div>
+            </div>
+            <div class="con_div_text left">
+                <div class="con_div_text01 left">
+                    <img src="assets/digital-screen/images/info_9.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>全年来访人数(人)</p>
+                        <p class="sky">12356</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="assets/digital-screen/images/info_10.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>当月来访人数(人)</p>
+                        <p class="sky">12356</p>
+                    </div>
+                </div>
+            </div>
+            <div class="con_div_text left">
+
+                <div class="con_div_text01 left">
+                    <img src="assets/digital-screen/images/info_11.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>国内业务</p>
+                        <p class="org">72%</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="assets/digital-screen/images/info_12.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>海外业务</p>
+                        <p class="org">28%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--统计分析图-->
+        <div class="div_any">
+            <div class="left div_any01">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_5.png">各部门来访人次(人)</div>
+                    <p id="histogramChart1" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_6.png">各部门业务人次(人)</div>
+                    <p id="histogramChart2" class="p_chart"></p>
+                </div>
+            </div>
+            <div class="left div_any01">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_7.png">个人业务(M$)</div>
+                    <p id="lineChart1" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_8.png">对公业务(M$)</div>
+                    <p id="lineChart2" class="p_chart"></p>
+                </div>
+            </div>
+            <div class="left div_any01">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_9.png">国内业务(%)</div>
+                    <p id="histogramChart3" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_10.png">海外业务(%)</div>
+                    <p id="histogramChart4" class="p_chart"></p>
+                </div>
+            </div>
+            <div class="left div_any01">
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_11.png">VIP客户量(人)</div>
+                    <p id="pieChart1" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <div class="div_any_title"><img src="assets/digital-screen/images/title_12.png">VIP客户金额(M$)</div>
+                    <p id="pieChart2" class="p_chart"></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

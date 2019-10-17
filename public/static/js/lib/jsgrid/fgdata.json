@@ -1,0 +1,191 @@
+[{
+	"ID": 1,
+	"Title": "家具",
+	"Type": "茶几",
+	"CreatedBy": "59",
+	"ModifiedBy": "2015-05-06 00:00:00",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 2,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:25:08",
+	"AssignedTo": "闲置",
+	"Priority": "normal",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 3,
+	"Title": "办公用品",
+	"Type": "打印机",
+	"CreatedBy": "56",
+	"ModifiedBy": "2019-05-27 14:26:13",
+	"AssignedTo": "闲置",
+	"Priority": "major",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 4,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:26:20",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 5,
+	"Title": "办公用品",
+	"Type": "电脑",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:26:28",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 7,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:28:01",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 9,
+	"Title": "厨房设备",
+	"Type": "热水壶",
+	"CreatedBy": "23",
+	"ModifiedBy": "2019-05-27 14:29:19",
+	"AssignedTo": "闲置",
+	"Priority": "minor",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 10,
+	"Title": "办公用品",
+	"Type": "办公桌",
+	"CreatedBy": "64",
+	"ModifiedBy": "2019-05-27 14:29:19",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 11,
+	"Title": "办公用品",
+	"Type": "电脑",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:26:28",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 12,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:28:01",
+	"AssignedTo": "闲置",
+	"Priority": "normal",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 13,
+	"Title": "家具",
+	"Type": "茶几",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:28:01",
+	"AssignedTo": "闲置",
+	"Priority": "major",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 14,
+	"Title": "厨房设备",
+	"Type": "热水壶",
+	"CreatedBy": "23",
+	"ModifiedBy": "2019-05-27 14:29:19",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 15,
+	"Title": "办公用品",
+	"Type": "办公桌",
+	"CreatedBy": "64",
+	"ModifiedBy": "2019-05-27 14:29:19",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 16,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:29:19",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 17,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:29:19",
+	"AssignedTo": "闲置",
+	"Priority": "minor",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 18,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-27 14:29:19",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 19,
+	"Title": "办公用品",
+	"Type": "电脑",
+	"CreatedBy": "76",
+	"ModifiedBy": "2016-06-08 00:00:00",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}, {
+	"ID": 20,
+	"Title": "家具",
+	"Type": "椅子",
+	"CreatedBy": "89",
+	"ModifiedBy": "2019-05-28 18:02:05",
+	"AssignedTo": "哈哈哈哈",
+	"Priority": "critical",
+	"Status": "OLD",
+	"Rule": "LAWER"
+}, {
+	"ID": 21,
+	"Title": "办公用品",
+	"Type": "电脑",
+	"CreatedBy": "76",
+	"ModifiedBy": "2016-06-08 00:00:00",
+	"AssignedTo": "闲置",
+	"Priority": "critical",
+	"Status": "new",
+	"Rule": "LAW"
+}]

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>质量管理</title>
+
+
+    <!-- Nestable -->
+    <link href="/static/css/lib/nestable/nestable.css" rel="stylesheet">
+
+    <!-- Calender 2 -->
+    <link href="/static/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+
+    <!-- Calender -->
+    <link href="/static/css/lib/calendar/fullcalendar.css" rel="stylesheet">
+    <!-- jstree -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+
+    <!-- Common -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="/static/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.15.3/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/static/css/lib/helper.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+
+
+    <style>
+        /* 设置表头不对齐 */
+        .table_list_box {
+            table-layout: fixed !important;
+        }
+
+        #tb_SaleOrder_Add td input[type=text] {
+            height: 35px;
+            border-radius: 6px;
+            border: 1px #cccccc solid;
+            outline: none
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="logo"><a href="index.html">
+                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>恒城科技</span></a></div>
+                <ul>
+                    <li class="label">菜单</li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-home fa-fw"></i> 首页 </a>
+                    </li>
+                    <li class="label">功能</li>
+                    <li>
+                        <a href="forge-table.html"><i class="fa fa-desktop"></i> BIM总览
+                            <span class="sidebar-collapse-icon "></span></a>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> 施工数据 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="cost-control.html">成本管控</a></li>
+                            <li><a href="material-tracking.html">物料跟踪</a></li>
+                            <li><a href="construction-progress.html">施工进度</a></li>
+                            <li><a href="quality-control.html">质量控制</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-file"></i> 项目资料 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="design-files.html">设计资料</a></li>
+                            <li><a href="construction-files.html">施工资料</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-crosshairs"></i> 数字运维 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="digital-screen.html" target="_blank">数字大屏</a></li>
+                            <li><a href="video-monitor.html" target="_blank">视频监控</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle"><i class="fa fa-cog"></i> 系统设置 <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="stuff-list.html">组织结构</a></li>
+                            <li><a href="weekly-report.html">电子周报</a></li>
+                            <li><a href="index.html">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
+
+    <!-- /# header -->
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="float-left" style="text-align:left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="float-right">-->
+                <div class="col-lg-4">
+                    <div class="float-right" style="text-align:right">
+                        <div class="dropdown dib">
+                            <div class="header-icon">
+                                <span class="user-avatar">
+                                    秦正根
+                                    <i class="fa fa-user-circle-o" style="font-size:24px"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /# content -->
+    <div class="content-wrap">
+        <div class="col-md-12">
+            <!-- <h4 style="margin: 15px 0px 15px 15px">质量管理</h4> -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs customtab" role="tablist">
+                <li class="nav-item"> <a class="nav-link active show" data-toggle="tab" href="#zhiliang" role="tab"
+                        aria-selected="true"><span class="hidden-sm-up"><i class="ti-info-alt"></i></span> <span
+                            class="hidden-xs-down">质量日历</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#anquan" role="tab"
+                        aria-selected="false"><span class="hidden-sm-up"><i class="ti-shield"></i></span> <span
+                            class="hidden-xs-down">安全守则</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#jinduzhaopian" role="tab"
+                        aria-selected="false"><span class="hidden-sm-up"><i class="ti-camera"></i></span> <span
+                            class="hidden-xs-down">进度报告</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#gongyiku" role="tab"
+                        aria-selected="false"><span class="hidden-sm-up"><i class="ti-shopping-cart"></i></span>
+                        <span class="hidden-xs-down">工艺库</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#yunwendang" role="tab"
+                        aria-selected="false"><span class="hidden-sm-up"><i class="ti-cloud-up"></i></span>
+                        <span class="hidden-xs-down">云文档</span></a> </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content ">
+                <!-- Tab 1 -->
+                <div class="tab-pane active" id="zhiliang" role="tabpanel">
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a href="#" data-toggle="modal" data-target="#add-category"
+                                            class="btn btn-lg btn-success btn-block waves-effect waves-light">
+                                            <i class="fa fa-plus"></i> 创建
+                                        </a>
+                                        <div id="external-events" class="m-t-20">
+                                            <br>
+                                            <p>拖放或在日历中单击来创建事件</p>
+                                            <div class="external-event bg-primary ui-draggable ui-draggable-handle"
+                                                data-class="bg-primary"
+                                                style="position: relative; z-index: auto; width: 275px; right: auto; height: 33px; bottom: auto; left: 0px; top: 0px;">
+                                                <i class="fa fa-move"></i>一般隐患
+                                            </div>
+                                            <div class="external-event bg-pink ui-draggable ui-draggable-handle"
+                                                data-class="bg-pink"
+                                                style="position: relative; z-index: auto; width: 275px; right: auto; height: 33px; bottom: auto; left: 0px; top: 0px;">
+                                                <i class="fa fa-move"></i>已解决
+                                            </div>
+                                            <div class="external-event bg-warning ui-draggable ui-draggable-handle"
+                                                data-class="bg-warning"
+                                                style="position: relative; z-index: auto; width: 275px; right: auto; height: 33px; bottom: auto; left: 0px; top: 0px;">
+                                                <i class="fa fa-move"></i>主要隐患
+                                            </div>
+                                            <div class="external-event bg-danger ui-draggable ui-draggable-handle"
+                                                data-class="bg-danger"
+                                                style="position: relative; z-index: auto; width: 275px; right: auto; height: 33px; bottom: auto; left: 0px; top: 0px;">
+                                                <i class="fa fa-move"></i>严重隐患
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="card-box">
+                                            <div id="calendar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- end col -->
+                                    <!-- BEGIN MODAL -->
+                                    <div class="modal fade none-border" id="event-modal" aria-hidden="true"
+                                        style="display: none;">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">
+                                                        <strong>质量问题</strong>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-hidden="true">×</button>
+                                                    </h4>
+
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form><label>质量问题变更</label>
+                                                        <div class="input-group"><input class="form-control" type="text"
+                                                                value="zhiliangbiangeng"><span
+                                                                class="input-group-btn"><button type="submit"
+                                                                    class="btn btn-success waves-effect waves-light save-category">
+                                                                    整改通过</button></span></div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info waves-effect"
+                                                        style="float: left">上传现场图片</button>
+                                                    <button type="button" class="btn btn-default waves-effect"
+                                                        data-dismiss="modal">关闭问题</button>
+                                                    <button type="button"
+                                                        class="btn btn-success save-event waves-effect waves-light"
+                                                        style="display: none;">创建质量问题</button>
+                                                    <button type="button"
+                                                        class="btn btn-danger delete-event waves-effect waves-light"
+                                                        data-dismiss="modal" style="display: inline;">删除</button>
+                                                    <!-- 如果display: block是有换行符，而inline则没有换行符 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal Add Category -->
+                                    <div class="modal fade none-border" id="add-category">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">
+                                                        <strong>添加质量事件</strong>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-hidden="true">×</button>
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label class="control-label">质量问题名</label>
+                                                                <input class="form-control form-white"
+                                                                    placeholder="输入名称" type="text" name="category-name">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label class="control-label">选则质量问题程度</label>
+                                                                <select class="form-control form-white"
+                                                                    data-placeholder="Choose a color..."
+                                                                    name="category-color">
+                                                                    <option value="danger">严重隐患</option>
+                                                                    <option value="pink">已解决</option>
+                                                                    <option value="primary">一般隐患</option>
+                                                                    <option value="warning">主要隐患</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default waves-effect"
+                                                        data-dismiss="modal">关闭</button>
+                                                    <button type="button"
+                                                        class="btn btn-success waves-effect waves-light save-category"
+                                                        data-dismiss="modal">保存</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END MODAL -->
+                                </div>
+                            </div>
+
+                            <!-- /# card -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab 2 -->
+                <div class="tab-pane" id="anquan" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>安全规章 </h4>
+
+                                </div>
+                                <div class="todo-list">
+                                    <div class="tdl-holder">
+                                        <div class="tdl-content">
+                                            <ul>
+                                                <li><label><input
+                                                            type="checkbox"><i></i><span>1、进入施工现场必须遵守总承包方安全管理规定。</span><a
+                                                            href="#" class="ti-close"></a></label></li>
+                                                <li><label><input
+                                                            type="checkbox"><i></i><span>2、严禁私自带领闲杂人员进入施工现场，严禁带走工作用具或公司物品。</span><a
+                                                            href="#" class="ti-close"></a></label></li>
+                                                <li><label><input
+                                                            type="checkbox"><i></i><span>3、必须正确穿戴劳保用品，如安全帽（系好下颚带，安全帽完好）、劳保鞋、口罩等，不得穿着宽大的服装、拖鞋等不安全装束，严禁赤膊。</span><a
+                                                            href="#" class="ti-close"></a></label></li>
+                                                <li><label><input
+                                                            type="checkbox"><i></i><span>4、进入基坑、屋面等临边处、各种洞口处，要集中精神，防止高处坠落。</span><a
+                                                            href="#" class="ti-close"></a></label></li>
+                                                <li><label><input type="checkbox"><i></i><span>5、严禁在脚手架防护栏杆上休息。</span><a
+                                                            href="#" class="ti-close"></a></label></li>
+                                                <li><label><input type="checkbox"><i></i><span>6、严禁在现场追逐打闹。</span><a
+                                                            href="#" class="ti-close"></a></label></li>
+                                                <li><label><input
+                                                            type="checkbox"><i></i><span>7、严禁向上、向下乱乱丢材、物、垃圾、工具等。</span><a
+                                                            href="#" class="ti-close"></a></label></li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" class="tdl-new form-control" placeholder="创建新规程...">
+                                    </div>
+                                </div>
+                            </div><!-- /# card -->
+                        </div><!-- /# column -->
+                    </div>
+                </div>
+                <!-- Tab 3 -->
+                <!-- 进度报告 -->
+                <div class="modal fade" id="jinduPDF" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="width: 1000px">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">进度报告</h4>
+                            </div>
+                            <div class="modal-body" id="pdfViewer" style="height: 1200px; width:1000px">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 进度报告 -->
+                <div class="tab-pane" id="jinduzhaopian" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="thumbnail"
+                                style="background-color: transparent;box-shadow:0px 0px 8px 5px #ccc;">
+                                <img src="/static/images/sgxc/sgjd0.JPG" alt="image">
+                                <!-- /img -->
+                                <div class="caption">
+                                    <div style="padding-bottom: 25px">
+                                        <h2 style="color: rgb(0, 140, 255)">桩基础施工</h2>
+                                    </div>
+                                    <p>计划开始：2017/1/29</br>
+                                        计划结束：2017/5/29</p>
+                                    <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#jinduPDF">
+                                        打开详细信息 <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /text -->
+                        </div>
+                        <!-- /col-sm-3 -->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="thumbnail"
+                                style="background-color: transparent;box-shadow:0px 0px 8px 5px #ccc;">
+                                <img src="/static/images/sgxc/sgjd1.JPG" alt="image">
+                                <!-- /img -->
+                                <div class="caption">
+                                    <div style="padding-bottom: 25px">
+                                        <h2 style="color: rgb(0, 140, 255)">地上11层结构施工</h2>
+                                    </div>
+                                    <p>计划开始：2017/12/3</br>
+                                        计划结束：2019/12/13</p>
+                                    <button class="btn btn-primary btn-lg" type="button">
+                                        打开详细信息 <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /col-sm-3 -->
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="thumbnail"
+                                style="background-color: transparent;box-shadow:0px 0px 8px 5px #ccc;">
+                                <img src="/static/images/sgxc/sgjd2.JPG" alt="image">
+                                <!-- /img -->
+                                <div class="caption">
+                                    <div style="padding-bottom: 25px">
+                                        <h2 style="color: rgb(0, 140, 255)">地上3层结构施工</h2>
+                                    </div>
+                                    <p>计划开始：2017/7/28</br>
+                                        计划结束：2017/8/5</p>
+                                    <button class="btn btn-primary btn-lg" type="button">
+                                        打开详细信息 <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /col-sm-3 -->
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="thumbnail"
+                                style="background-color: transparent;box-shadow:0px 0px 8px 5px #ccc;">
+                                <img src="/static/images/sgxc/sgjd3.JPG" alt="image">
+                                <!-- /img -->
+                                <div class="caption">
+                                    <div style="padding-bottom: 25px">
+                                        <h2 style="color: rgb(0, 140, 255)">剔凿桩头垫层施工</h2>
+                                    </div>
+                                    <p>计划开始：2017/5/29</br>
+                                        计划结束：2017/6/28</p>
+                                    <button class="btn btn-primary btn-lg" type="button">
+                                        打开详细信息 <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /col-sm-3 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="thumbnail"
+                                style="background-color: transparent;box-shadow:0px 0px 8px 5px #ccc;">
+                                <img src="/static/images/jiahao.jfif" alt="image"
+                                    style="padding-bottom: 25px; padding-top: 25px" width="150px" height="150px">
+                                <!-- /img -->
+
+                                <button class="btn btn-primary btn-lg" style="display:block;margin:0 auto"
+                                    type="button">
+                                    添加新进度照片
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 工艺库 -->
+
+                <form id="gykUploadFile" method='post' enctype="multipart/form-data" style="height: 0px">
+                    <input id="gykUploadField" type="file" name="theFile" style="visibility:hidden" />
+                </form>
+                <div class="tab-pane" id="gongyiku" role="tabpanel">
+                    <!-- 表头 -->
+                    <div class="col-md-4 col-sm-6" style="padding-right: 5px;">
+                        <div class="panel panel-default fill"
+                            style="background-color: transparent;box-shadow:0px 0px 8px 5px #ccc;">
+                            <div class="panel-heading" data-toggle="tooltip">
+                                工艺库 &amp; 工艺
+                                <span id="refreshFolders" class="glyphicon glyphicon-refresh"
+                                    style="cursor: pointer"></span>
+                                <button class="btn btn-xs btn-info" style="float: right" id="CreateCraft"
+                                    data-toggle="modal">
+                                    <!-- 打开哪个panel -->
+                                    <span class="fa fa-check"></span> 新工艺
+                                </button>
+                                <button id="deleteNodes" class="btn btn-xs btn-danger"
+                                    style="float: right; margin-right: 20px">
+                                    <span class="glyphicon glyphicon-th-list"></span> 删除节点
+                                </button>
+                            </div>
+                            <div id="jstree_gyk" style="overflow: auto; height: calc(100vh - 200px);">
+                                tree here
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-6" style="padding-left: 5px;">
+                        <div class="panel panel-default fill"
+                            style="background-color: transparent;box-shadow:0px 0px 8px 5px #ccc; ">
+                            <div class="panel-heading">
+                                <button type="button" style="margin-right: 20px" class="btn btn-success btn-xs">
+                                    编辑工艺 <span class="glyphicon glyphicon-file"></span>
+                                </button>
+
+                            </div>
+                            <div style="overflow: auto; height: calc(100vh - 200px);">
+                                <img src="/static/images/sggy0.jpg" alt="image" class="img-responsive center-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Common -->
+
+    <script src="/static/js/lib/jquery.min.js"></script>
+    <script src="/static/js/lib/jquery.nanoscroller.min.js"></script>
+    <script src="/static/js/lib/menubar/sidebar.js"></script>
+    <script src="/static/js/lib/preloader/pace.min.js"></script>
+
+    <script src="/static/js/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    <script src="/static/js/lib/moment/moment.js"></script>
+    <script src="/static/js/lib/calendar/fullcalendar.min.js"></script>
+    <script src="/static/js/lib/calendar/fullcalendar-init.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.15.3/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.15.3/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="/static/js/scripts.js"></script>
+    <script src="/static/js/extensions/craftJstree.js"></script>
+    <script src="/static/js/lib/jquery-pdf/pdfobject.js"></script>
+
+    <script>
+        $("#jinduPDF").click(function () {
+            $('#overLay').css({ 'display': 'block' });
+            PDFObject.embed("datas/pdf/a1.pdf", "#pdfViewer");
+            $('#pdfViewer').css({ 'display': 'block' });
+        })
+    </script>
+
+
+</body>
+
+</html>
