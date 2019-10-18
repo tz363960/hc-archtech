@@ -190,6 +190,9 @@ app.get('*', function (req, res) {
     res.sendfile('./public/forge-table.html');
 });
 
+
+
+
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(err.statusCode).json(err);
