@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'hctech',
     password: 'hc123',
-    database: 'ZemenBank201908'
+    database: 'zemenbank'
 });
 //连接状态测试
 connection.connect(function (err) {

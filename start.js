@@ -6,7 +6,7 @@ var execSync = require('child_process').execSync;
 var multiparty = require('multiparty');
 var router = express.Router();
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 5000;
 const config = require('./config');
 if (config.credentials.client_id == null || config.credentials.client_secret == null) {
     console.error('Missing FORGE_CLIENT_ID or FORGE_CLIENT_SECRET env. variables.');
