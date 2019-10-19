@@ -85,25 +85,25 @@ $(function () {      //$(function(){})表示等页面加载完毕后发生此函
         var floatNum = myfloat.getElementsByTagName("td")    //找到所有td标签中的数据，这个是根据自己的页面处理
         for (var i = 0; i < floatNum.length; i = i + 2) {
             switch (floatNum[i].innerHTML) {
-                case "Status:":
+                case "状态":
                     floatNum[i + 1].innerText = tempData.childNodes[6].innerText;
                     break;
-                case "Priority:":
+                case "优先级:":
                     floatNum[i + 1].innerText = tempData.childNodes[5].innerText;
                     break;
-                case "Due date:":
+                case "到期时间:":
                     floatNum[i + 1].innerText = tempData.childNodes[3].innerText;
                     break;
-                case "Type:":
+                case "类型:":
                     floatNum[i + 1].innerText = tempData.childNodes[1].innerText;
                     break;
-                case "Creator:":
+                case "发起人:":
                     floatNum[i + 1].innerText = tempData.childNodes[0].innerText;
                     break;
-                case "Date created:":
+                case "创建时间:":
                     floatNum[i + 1].innerText = tempData.childNodes[3].innerText;
                     break;
-                case "Assigned to:":
+                case "分配给:":
                     floatNum[i + 1].innerText = tempData.childNodes[2].innerText;;
                     break;
             }
