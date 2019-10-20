@@ -35,16 +35,16 @@ $(function () {      //$(function(){})表示等页面加载完毕后发生此函
             var tables = document.getElementsByClassName("jsgrid-cell");
             for (var i = 0; i < tables.length; i++) {   // 改变字体颜色
                 switch (tables[i].innerHTML) {
-                    case "critical":
+                    case "紧急":
                         tables[i].style.color = "red";
                         break;
-                    case "minor":
+                    case "次要":
                         tables[i].style.color = "#5394b2";
                         break;
-                    case "normal":
+                    case "正常":
                         tables[i].style.color = "#759c75";
                         break;
-                    case "major":
+                    case "主要":
                         tables[i].style.color = "#ef9311";
                         break;
                 }

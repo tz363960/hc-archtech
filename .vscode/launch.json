@@ -19,7 +19,7 @@
                 //forever start start.js
                 "FORGE_CLIENT_ID": "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m",
                 "FORGE_CLIENT_SECRET": "nA8YA1KcR5OjkDrG",
-                "FORGE_CALLBACK_URL": "http://localhost:3000/api/forge/callback/oauth"
+                "FORGE_CALLBACK_URL": "http://localhost:5000/api/forge/callback/oauth"
             }
         }
     ]

@@ -1,7 +1,6 @@
 var viewer;
 //固定加载的模型，bucket宜采用persistent。注意：此处urn需和token对应。
-urn="dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bW9kZWwyMDE5LTA2LTI4LTA5LTU4LTM4LWQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0MjdlL1plbWVuJTIwLSUyMCVFNiU5NSVCNCVFNSU5MCU4OCVFNiVBOCVBMSVFNSU5RSU4QiUyMDA3MjYubndj"
-//urn = "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6c2hocWl2czJvaWNhZGdnaHBndnhkYzBoZHpzdXFhM3gtdGVtcG9yYXJ5L1plbWVuJTIwLSUyMCVFNiU5NSVCNCVFNSU5MCU4OCVFNiVBOCVBMSVFNSU5RSU4QiUyMDA3MjYubndj"
+urn="dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6b3ltcDdmaG5paHhyZ2ZkeG5zc2VqOXA3bzFobGp6NG0teWFudGFpL1plbWVuJTIwLTEwMTcubndj"
 // @urn the model to show
 // @viewablesId which viewables to show, applies to BIM 360 Plans folder
 

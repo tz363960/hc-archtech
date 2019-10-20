@@ -5,7 +5,7 @@
 	"CreatedBy": "59",
 	"ModifiedBy": "2015-05-06 00:00:00",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -15,7 +15,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:25:08",
 	"AssignedTo": "闲置",
-	"Priority": "normal",
+	"Priority": "正常",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -25,7 +25,7 @@
 	"CreatedBy": "56",
 	"ModifiedBy": "2019-05-27 14:26:13",
 	"AssignedTo": "闲置",
-	"Priority": "major",
+	"Priority": "主要",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -35,7 +35,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:26:20",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -45,7 +45,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:26:28",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -55,7 +55,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:28:01",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -65,7 +65,7 @@
 	"CreatedBy": "23",
 	"ModifiedBy": "2019-05-27 14:29:19",
 	"AssignedTo": "闲置",
-	"Priority": "minor",
+	"Priority": "次要",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -75,7 +75,7 @@
 	"CreatedBy": "64",
 	"ModifiedBy": "2019-05-27 14:29:19",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -85,7 +85,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:26:28",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -95,7 +95,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:28:01",
 	"AssignedTo": "闲置",
-	"Priority": "normal",
+	"Priority": "正常",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -105,7 +105,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:28:01",
 	"AssignedTo": "闲置",
-	"Priority": "major",
+	"Priority": "主要",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -115,7 +115,7 @@
 	"CreatedBy": "23",
 	"ModifiedBy": "2019-05-27 14:29:19",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -125,7 +125,7 @@
 	"CreatedBy": "64",
 	"ModifiedBy": "2019-05-27 14:29:19",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -135,7 +135,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:29:19",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -145,7 +145,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:29:19",
 	"AssignedTo": "闲置",
-	"Priority": "minor",
+	"Priority": "次要",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -155,7 +155,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-27 14:29:19",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -165,7 +165,7 @@
 	"CreatedBy": "76",
 	"ModifiedBy": "2016-06-08 00:00:00",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }, {
@@ -175,7 +175,7 @@
 	"CreatedBy": "89",
 	"ModifiedBy": "2019-05-28 18:02:05",
 	"AssignedTo": "哈哈哈哈",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "OLD",
 	"Rule": "LAWER"
 }, {
@@ -185,7 +185,7 @@
 	"CreatedBy": "76",
 	"ModifiedBy": "2016-06-08 00:00:00",
 	"AssignedTo": "闲置",
-	"Priority": "critical",
+	"Priority": "紧急",
 	"Status": "new",
 	"Rule": "LAW"
 }]
