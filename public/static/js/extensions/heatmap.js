@@ -53,7 +53,7 @@ class HeatmapExtension extends Autodesk.Viewing.Extension {
         };
         const icon = this.button.container.children[0];
         icon.classList.add('fa', 'fa-fire');    
-        this.button.setToolTip('Heatmaps');
+        this.button.setToolTip('热力云图');
         this.toolbar = viewer.toolbar.getControl('CustomToolbar') || new Autodesk.Viewing.UI.ControlGroup('CustomToolbar');
         this.toolbar.addControl(this.button);
         viewer.toolbar.addControl(this.toolbar);
