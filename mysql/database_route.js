@@ -23,6 +23,16 @@ connection.connect(function (err) {
     console.log('connected as id ' + connection.threadId);
 });
 
+pingInterval = setInterval(() =>{
+    connection.ping((err) => {
+        console.log(success);
+        if (err) {
+            console.log('ping err: ' + JSON.stringify(err));
+        }
+    });
+}, 3600000*3);
+
+clearInterval(pingInterval);
 //查询数据
 router.get('/construction-progress/data12', function (req, res) {
     connection.query('SELECT * FROM ProgressDataSet', function (error, results) {
