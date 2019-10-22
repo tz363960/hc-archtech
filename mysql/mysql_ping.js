@@ -1,3 +1,6 @@
+/*
+
+
 // 加载数据库模块
 var mysql = require('mysql');
 const config = require('../config');
@@ -40,3 +43,5 @@ class DB{
 }
 
 module.exports = DB;
+
+ */
