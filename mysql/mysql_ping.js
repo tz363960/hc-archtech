@@ -1,13 +1,9 @@
 // 加载数据库模块
 var mysql = require('mysql');
+const config = require('../config');
 var _this;
 var pingInterval = null;
-var db_config = {
-    host: "localhost",  //主机地址
-    user: "hctech", //数据库用户名
-    password: "hc123", //数据库用户密码
-    database: "zemenbank"  //数据库名
-}
+var db_config = (config.sqlconnection);
 class DB{
     constructor(){
         _this = this;
