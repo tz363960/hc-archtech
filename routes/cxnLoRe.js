@@ -24,7 +24,7 @@ app.use(function (req, res, next) { //登录拦截器,这个一定要放在expre
         var limitN = cookieLogin.tokens.length;
         if (limitN) {
             for (var i = 0; i < limitN; i++) {
-                if (new Date().getTime() - cookieLogin.times[i] > 6000000) { // 大于10分钟的token就删除
+                if (new Date().getTime() - cookieLogin.times[i] > 6000000) { // 大于100分钟的token就删除
                     cookieLogin.times.splice(i, 1);
                     cookieLogin.tokens.splice(i, 1);
                     if (i != 0) { i--; }
