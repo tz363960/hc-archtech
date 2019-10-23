@@ -192,10 +192,56 @@ app.get('/material-tracking/newCraft', function (req, res) {
     sqlconnection.end();
 });
 
+function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据库
+    // SELECT table_name FROM information_schema.TABLES WHERE table_name ='表名';   判断一个表是否存在
+    const fs = require('fs');
+    const mysql = require('mysql');
+    var filePath = '../public/datas/' + jsonFileName;
+    var realName = jsonFileName.split('.')[0]
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+        var sqlconnection = mysql.createConnection(config.sqlconnection);
+        sqlconnection.connect();
+        var sql = `create table ${realName}(`;
+        if (err) { console.log(err); }
+        else {
+            var dataObj = JSON.parse(data);
+            var keys = Object.keys(dataObj[0]);
+            for (var k = 0; k < keys.length; k++) {
+                sql = sql + keys[k] + ' varchar(32),'
+            }
+            sql = sql.substring(0, sql.length - 1);
+            sql = sql + ');';
+            sqlconnection.query(sql, function (err, result) {
+                if (err) {
+                    console.log('[SELECT ERROR] - ', err.message);
+                    return;
+                } else {
+                    for (var i = 0; i < dataObj.length; i++) {
+                        var insertSql = `insert into ${realName} values(`;
+                        for (var j = 0; j < keys.length; j++) {
+                            insertSql = insertSql + mysql.escape(Object.values(dataObj[i])[j]) + ",";
+                        }
+                        insertSql = insertSql.substring(0, insertSql.length - 1);
+                        insertSql = insertSql + ');';
+                        sqlconnection.query(insertSql, function (err, result) {
+                            if (err) {
+                                console.log('[SELECT ERROR] - ', err.message);
+                                return;
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    })
+}
 
 //如果404，则重定向
 app.get('*', function (req, res) {
     res.sendfile('./public/index.html');
 });
 
-module.exports = app;
+module.exports = {
+    app,
+    translateJSONtoMysql
+};

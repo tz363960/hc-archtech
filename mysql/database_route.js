@@ -2,18 +2,14 @@ const express = require('express');
 const multer = require('multer');
 const http = require('http');
 const url = require('url');
+const sqlconnection = require('../config');
 
 let router = express.Router();
 
 var mysql = require('mysql');
 
 //建立连接 ZemenBank201908
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'hctech',
-    password: 'hc123',
-    database: 'zemenbank'
-});
+var connection = mysql.createConnection(sqlconnection.sqlconnection);
 //连接状态测试
 connection.connect(function (err) {
     if (err) {
