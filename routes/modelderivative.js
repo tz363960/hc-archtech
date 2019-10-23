@@ -25,6 +25,12 @@ const {
     JobSvfOutputPayload
 } = require('forge-apis');
 
+express.use(function (req, res, next) {
+    var userCookies = req.cookies.ift;
+    console.log(userCookies);
+    next();
+})
+
 var CLIENT_ID = process.env.FORGE_CLIENT_ID,
     CLIENT_SECRET = process.env.FORGE_CLIENT_SECRET;
 
