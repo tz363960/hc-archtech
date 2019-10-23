@@ -3223,13 +3223,13 @@ tbody tr td {
   background: transparent;
 }
 .flot-pie-container {
-  height: 275px;
+  height: 80%;
 }
 .flot-pie-energy-container {
-  height: 275px;
+  height: 80%;
 }
 .flot-pie-water-container {
-  height: 275px;
+  height: 80%;
 }
 
 .flotBar-container {

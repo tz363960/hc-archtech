@@ -293,9 +293,9 @@ More detail and specific examples can be found in the included HTML file.
 
 			if (options.series.pie.offset.left == "auto") {
 				if (options.legend.position.match("w")) {
-					centerLeft += legendWidth / 2;
+					centerLeft += legendWidth / 0.1;
 				} else {
-					centerLeft -= legendWidth / 2;
+					centerLeft -= legendWidth / 0.1;
 				}
 				if (centerLeft < maxRadius) {
 					centerLeft = maxRadius;
@@ -496,7 +496,7 @@ More detail and specific examples can be found in the included HTML file.
 						target.append(html);
 
 						var label = target.children("#pieLabel" + index);
-						var labelTop = (y - label.height() / 2);
+						var labelTop = (y - label.height() / 2 );
 						var labelLeft = (x - label.width() / 2);
 
 						label.css("top", labelTop);

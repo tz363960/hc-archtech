@@ -13,9 +13,15 @@ module.exports = {
         public: ['viewables:read']
     },
     sqlconnection : {
-        host: 'localhost',
+        host: '192.168.1.12',
         user: 'hctech',
         password: 'hc123',
-        database: 'zemenbank'
+        database: 'ZemenBank201908'
     }
+    // sqlconnection : {
+    //     host: 'localhost',
+    //     user: 'hctech',
+    //     password: 'hc123',
+    //     database: 'zemenbank'
+    // }
 };
