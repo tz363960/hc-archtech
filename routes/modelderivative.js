@@ -17,6 +17,7 @@
 /////////////////////////////////////////////////////////////////////
 
 const express = require('express');
+const cookieParse = require('cookie-parser');
 const {
     DerivativesApi,
     JobPayload,
@@ -24,8 +25,10 @@ const {
     JobPayloadOutput,
     JobSvfOutputPayload
 } = require('forge-apis');
+let app=express();
+app.use(cookieParse());
 
-express.use(function (req, res, next) {
+app.use(function (req, res, next) {
     var userCookies = req.cookies.ift;
     console.log(userCookies);
     next();
