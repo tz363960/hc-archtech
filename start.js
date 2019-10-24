@@ -27,7 +27,7 @@ app.use('/', require('./routes/cxn'));   //use之后，cxn里面的当前路径�
 
 //如果404，则重定向
 app.get('*', function (req, res) {
-    res.sendfile('./public/forge-table.html');
+    res.sendfile('./public/index.html');
 });
 
 

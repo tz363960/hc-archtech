@@ -237,8 +237,12 @@ function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据�
 }
 
 //如果404，则重定向
-app.get('*', function (req, res) {
-    res.sendfile('./public/index.html');
-});
+// app.get('*', function (req, res) {
+//     res.sendfile('./public/index.html');
+// });
 
+<<<<<<< HEAD
 module.exports = app;
+=======
+module.exports = app;
+>>>>>>> 3c664732247d87160d6c8e55036b89cc39bd49ba
