@@ -55,8 +55,10 @@ var bucketsApi = new ForgeSDK.BucketsApi(), // Buckets Client
     objectsApi = new ForgeSDK.ObjectsApi(); // Objects Client
 
 //Middleware for obtaining a token for each request.
-router.use(async (req, res, next) => {
+router.use(async (req, res, next) => {  //文件转码时会调用这个函数
     const token = await getInternalToken();
+    username = req.cookies.username;
+    // console.log(token);
     req.oauth_token = token;
     req.oauth_client = getClient();
     next();
@@ -151,3 +153,4 @@ var getBuckets = function () {
 };
 
 module.exports = router;
+// module.exports.app = app;
