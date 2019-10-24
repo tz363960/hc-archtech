@@ -16,13 +16,8 @@
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
 
-const cookieParse = require('cookie-parser');
 const express = require('express');
-<<<<<<< HEAD
-let app = express();
-=======
 const cookieParse = require('cookie-parser');
->>>>>>> 3c664732247d87160d6c8e55036b89cc39bd49ba
 const {
     DerivativesApi,
     JobPayload,
@@ -33,10 +28,6 @@ const {
 let app=express();
 app.use(cookieParse());
 
-<<<<<<< HEAD
-app.use(cookieParse());
-=======
->>>>>>> 3c664732247d87160d6c8e55036b89cc39bd49ba
 app.use(function (req, res, next) {
     var userCookies = req.cookies.ift;
     console.log(userCookies);
