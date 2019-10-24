@@ -16,7 +16,9 @@
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
 
+const cookieParse = require('cookie-parser');
 const express = require('express');
+let app = express();
 const {
     DerivativesApi,
     JobPayload,
@@ -25,7 +27,8 @@ const {
     JobSvfOutputPayload
 } = require('forge-apis');
 
-express.use(function (req, res, next) {
+app.use(cookieParse());
+app.use(function (req, res, next) {
     var userCookies = req.cookies.ift;
     console.log(userCookies);
     next();
