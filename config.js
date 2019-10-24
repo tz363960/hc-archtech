@@ -18,7 +18,7 @@ module.exports = {
         public: ['viewables:read']
     },
     sqlconnection: {
-        host: 'localhost',
+        host: '47.110.84.253',
         user: 'hctech',
         password: 'hc123',
         database: 'zemenbank'

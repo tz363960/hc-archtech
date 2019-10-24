@@ -18,7 +18,11 @@
 
 const cookieParse = require('cookie-parser');
 const express = require('express');
+<<<<<<< HEAD
 let app = express();
+=======
+const cookieParse = require('cookie-parser');
+>>>>>>> 3c664732247d87160d6c8e55036b89cc39bd49ba
 const {
     DerivativesApi,
     JobPayload,
@@ -26,8 +30,13 @@ const {
     JobPayloadOutput,
     JobSvfOutputPayload
 } = require('forge-apis');
-
+let app=express();
 app.use(cookieParse());
+
+<<<<<<< HEAD
+app.use(cookieParse());
+=======
+>>>>>>> 3c664732247d87160d6c8e55036b89cc39bd49ba
 app.use(function (req, res, next) {
     var userCookies = req.cookies.ift;
     console.log(userCookies);
@@ -55,8 +64,10 @@ var bucketsApi = new ForgeSDK.BucketsApi(), // Buckets Client
     objectsApi = new ForgeSDK.ObjectsApi(); // Objects Client
 
 //Middleware for obtaining a token for each request.
-router.use(async (req, res, next) => {
+router.use(async (req, res, next) => {  //文件转码时会调用这个函数
     const token = await getInternalToken();
+    username = req.cookies.username;
+    // console.log(token);
     req.oauth_token = token;
     req.oauth_client = getClient();
     next();
@@ -151,3 +162,4 @@ var getBuckets = function () {
 };
 
 module.exports = router;
+// module.exports.app = app;
