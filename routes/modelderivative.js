@@ -17,6 +17,7 @@
 /////////////////////////////////////////////////////////////////////
 
 const express = require('express');
+const config = require('../config');
 const cookieParse = require('cookie-parser');
 const {
     DerivativesApi,
@@ -26,16 +27,7 @@ const {
     JobSvfOutputPayload
 } = require('forge-apis');
 var userCookiesName;
-var authIdAndSecret = {
-    'cxn2': {
-        "FORGE_ID": "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m",
-        "FORGE_SECRET": "nA8YA1KcR5OjkDrG"
-    },
-    'cxn3':{
-        "FORGE_ID": "EAImUtWq2VNlA3VAA7ZBWYdJ2KLZksiU",
-        "FORGE_SECRET": "zzXT3Ix7dt76Bprd",
-    }
-}
+var authIdAndSecret = config.authIdAndSecret;
 
 var CLIENT_ID = process.env.FORGE_CLIENT_ID,
     CLIENT_SECRET = process.env.FORGE_CLIENT_SECRET;
