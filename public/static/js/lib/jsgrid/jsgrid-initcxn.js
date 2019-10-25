@@ -122,4 +122,10 @@ $(function () {      //$(function(){})表示等页面加载完毕后发生此函
         });
     })
 });
-
+//
+var forgeTableHead = new Vue({
+    el: '#vueHeader',
+    data: {
+        userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1]))  // js截取两个字符串之间的内容
+    }
+})

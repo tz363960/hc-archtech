@@ -9,16 +9,7 @@ const cookieParse = require('cookie-parser');
 
 let router = express.Router();
 var userCookiesName;
-var authIdAndSecret = {
-    'cxn2': {
-        "FORGE_ID": "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m",
-        "FORGE_SECRET": "nA8YA1KcR5OjkDrG"
-    },
-    'cxn3':{
-        "FORGE_ID": "EAImUtWq2VNlA3VAA7ZBWYdJ2KLZksiU",
-        "FORGE_SECRET": "zzXT3Ix7dt76Bprd",
-    }
-}
+var authIdAndSecret = config.authIdAndSecret;
 
 // Middleware for obtaining a token for each request.
 router.use(async (req, res, next) => {

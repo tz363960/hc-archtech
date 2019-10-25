@@ -25,6 +25,7 @@
     <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.*/viewer3D.js"></script>
     <!-- jquery vendor -->
     <script src="static/js/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="static/js/lib/jquery.nanoscroller.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
@@ -135,7 +136,7 @@
     </div>
 
     <!-- /# header -->
-    <div class="header">
+    <div class="header" id="vueHeader">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-8">
@@ -154,7 +155,7 @@
                         <div class="dropdown dib">
                             <div class="header-icon">
                                 <span class="user-avatar">
-                                    王大宝
+                                    {{userChineseName}}
                                     <i class="fa fa-user-circle-o" style="font-size:24px"></i>
                                 </span>
                             </div>
