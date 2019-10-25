@@ -17,19 +17,13 @@ module.exports = {
         // Required scope for the client-side viewer
         public: ['viewables:read']
     },
-<<<<<<< HEAD
-    sqlconnection : {
-=======
     sqlconnection: {
->>>>>>> 589f7b95f60596c2a3c123dae41938fbfc9827e8
         host: '47.110.84.253',
         user: 'hctech',
         password: 'hc123',
         database: 'zemenbank'
     }
 };
-<<<<<<< HEAD
-=======
 
 function chooseClientId(username) {
     switch (username) {
@@ -43,4 +37,3 @@ function chooseClientId(username) {
             break;
     }
 }
->>>>>>> 589f7b95f60596c2a3c123dae41938fbfc9827e8
