@@ -25,14 +25,17 @@ const {
     JobPayloadOutput,
     JobSvfOutputPayload
 } = require('forge-apis');
-let app=express();
-app.use(cookieParse());
-
-app.use(function (req, res, next) {
-    var userCookies = req.cookies.ift;
-    console.log(userCookies);
-    next();
-})
+var userCookiesName;
+var authIdAndSecret = {
+    'cxn2': {
+        "FORGE_ID": "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m",
+        "FORGE_SECRET": "nA8YA1KcR5OjkDrG"
+    },
+    'cxn3':{
+        "FORGE_ID": "EAImUtWq2VNlA3VAA7ZBWYdJ2KLZksiU",
+        "FORGE_SECRET": "zzXT3Ix7dt76Bprd",
+    }
+}
 
 var CLIENT_ID = process.env.FORGE_CLIENT_ID,
     CLIENT_SECRET = process.env.FORGE_CLIENT_SECRET;
@@ -53,14 +56,16 @@ var oAuth2TwoLegged = new ForgeSDK.AuthClientTwoLegged(CLIENT_ID, CLIENT_SECRET,
 //删除Bucket和object分别调用的API
 var bucketsApi = new ForgeSDK.BucketsApi(), // Buckets Client
     objectsApi = new ForgeSDK.ObjectsApi(); // Objects Client
+    
 
 //Middleware for obtaining a token for each request.
-router.use(async (req, res, next) => {  //文件转码时会调用这个函数
-    const token = await getInternalToken();
-    username = req.cookies.username;
-    // console.log(token);
+router.use(async (req, res, next) => {  // 文件转码时会调用这个函数
+    const token = await getInternalToken(client_id,client_secret);
+    userCookiesName = req.cookies.separateName;
+    var client_id = authIdAndSecret[userCookiesName].FORGE_ID;
+    var client_secret = authIdAndSecret[userCookiesName].FORGE_SECRET;
     req.oauth_token = token;
-    req.oauth_client = getClient();
+    req.oauth_client = getClient(client_id,client_secret);
     next();
 });
 
