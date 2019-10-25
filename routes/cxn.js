@@ -240,7 +240,4 @@ function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据�
 // app.get('*', function (req, res) {
 //     res.sendfile('./public/index.html');
 // });
-
-
 module.exports = app;
-
