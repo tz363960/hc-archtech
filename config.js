@@ -17,10 +17,30 @@ module.exports = {
         // Required scope for the client-side viewer
         public: ['viewables:read']
     },
+<<<<<<< HEAD
     sqlconnection : {
+=======
+    sqlconnection: {
+>>>>>>> 589f7b95f60596c2a3c123dae41938fbfc9827e8
         host: '47.110.84.253',
         user: 'hctech',
         password: 'hc123',
         database: 'zemenbank'
     }
 };
+<<<<<<< HEAD
+=======
+
+function chooseClientId(username) {
+    switch (username) {
+        case 'cxn2':
+            ForgeAll.FORGE_CLIENT_ID = "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m";
+            ForgeAll.FORGE_CLIENT_SECRET = "nA8YA1KcR5OjkDrG";
+            break;
+        case 'cxn1':
+            ForgeAll.FORGE_CLIENT_ID = "EAImUtWq2VNlA3VAA7ZBWYdJ2KLZksiU";
+            ForgeAll.FORGE_CLIENT_SECRET = "zzXT3Ix7dt76Bprd";
+            break;
+    }
+}
+>>>>>>> 589f7b95f60596c2a3c123dae41938fbfc9827e8

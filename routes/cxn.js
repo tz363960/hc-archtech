@@ -242,7 +242,11 @@ function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据�
 // });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = app;
 =======
 module.exports = app;
 >>>>>>> 3c664732247d87160d6c8e55036b89cc39bd49ba
+=======
+module.exports = app;
+>>>>>>> 589f7b95f60596c2a3c123dae41938fbfc9827e8
