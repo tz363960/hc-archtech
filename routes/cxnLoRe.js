@@ -172,6 +172,7 @@ app.post('/Account/Hclogin', function (req, res) {
                             var token = new Date().getTime() + toDoJson[i].userName;
                             res.cookie('ift', md5(token), { maxAge: 6000000 });
                             res.cookie('username', encodeURI(toDoJson[i].name), { maxAge: 6000000 });
+                            res.cookie('separateName', toDoJson[i].userName,{ maxAge: 6000000 });
                             cookieLogin.tokens.push(md5(token));
                             cookieLogin.times.push(new Date().getTime());
                             res.json(replyDate);
