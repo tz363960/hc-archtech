@@ -105,7 +105,7 @@ function prepareAppBucketTree() {
         contextmenu: {
             items: autodeskCustomMenu
         }
-    }).on("loaded.jstree", function () {
+    }).on("loaded.jstree", function () {    // 这一步载入数据
         $("#appBuckets").jstree("open_all")
     }).bind("activate_node.jstree", function (evt, data) {
         if (data != null && data.node != null && data.node.type == "object") {

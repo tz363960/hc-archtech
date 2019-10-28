@@ -1,9 +1,4 @@
 // Autodesk Forge configuration
-var ForgeAll = {
-    FORGE_CLIENT_ID: '',
-    FORGE_CLIENT_SECRET: ''
-}
-
 module.exports = {
     // Set environment variables or hard-code here
     credentials: {

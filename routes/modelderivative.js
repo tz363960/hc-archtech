@@ -29,8 +29,8 @@ const {
 var userCookiesName;
 var authIdAndSecret = config.authIdAndSecret;
 
-var CLIENT_ID = process.env.FORGE_CLIENT_ID,
-    CLIENT_SECRET = process.env.FORGE_CLIENT_SECRET;
+var client_id;
+var client_secret;
 
 var ForgeSDK = require('../node_modules/forge-apis/src/index');
 
@@ -41,25 +41,25 @@ const {
 
 let router = express.Router();
 
+//Middleware for obtaining a token for each request.
+router.use(async (req, res, next) => {  // 文件转码时会调用这个函数
+    const token = await getInternalToken(client_id,client_secret);
+    userCookiesName = req.cookies.separateName;
+    client_id = authIdAndSecret[userCookiesName].FORGE_ID;
+    client_secret = authIdAndSecret[userCookiesName].FORGE_SECRET;
+    req.oauth_token = token;
+    req.oauth_client = getClient(client_id,client_secret);
+    next();
+});
+
 //两条腿认证
-var oAuth2TwoLegged = new ForgeSDK.AuthClientTwoLegged(CLIENT_ID, CLIENT_SECRET,
+var oAuth2TwoLegged = new ForgeSDK.AuthClientTwoLegged(client_id, client_secret,
     ['data:write', 'data:read', 'bucket:read', 'bucket:update', 'bucket:create', 'bucket:delete'], true);
 
 //删除Bucket和object分别调用的API
 var bucketsApi = new ForgeSDK.BucketsApi(), // Buckets Client
     objectsApi = new ForgeSDK.ObjectsApi(); // Objects Client
     
-
-//Middleware for obtaining a token for each request.
-router.use(async (req, res, next) => {  // 文件转码时会调用这个函数
-    const token = await getInternalToken(client_id,client_secret);
-    userCookiesName = req.cookies.separateName;
-    var client_id = authIdAndSecret[userCookiesName].FORGE_ID;
-    var client_secret = authIdAndSecret[userCookiesName].FORGE_SECRET;
-    req.oauth_token = token;
-    req.oauth_client = getClient(client_id,client_secret);
-    next();
-});
 
 // POST /api/forge/modelderivative/jobs - submits a new translation job for given object URN.
 // Request body must be a valid JSON in the form of { "objectName": "<translated-object-urn>" }.
