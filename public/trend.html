@@ -11,7 +11,106 @@
     <script src="assets/digital-screen/scripts/Plugin/echarts.min.js"></script>
     <script src="assets/digital-screen/scripts/common.js"></script>
     <script src="assets/digital-screen/scripts/trend.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.15.3/bootstrap-table.min.css" rel="stylesheet"> -->
+
 </head>
+<!-- <style>
+    @import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+    *,
+    *:before,
+    *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+
+    p {
+        margin: 0 0 20px;
+        line-height: 1.5;
+    }
+
+    section {
+        display: none;
+        padding: 0px 0 0;
+        border-top: 1px solid #ddd;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #bbb;
+        border: 1px solid transparent;
+    }
+
+    label:before {
+        font-family: fontawesome;
+        font-weight: normal;
+        margin-right: 10px;
+    }
+
+    label[for*='1']:before {
+        content: '\f1cb';
+    }
+
+    label[for*='2']:before {
+        content: '\f17d';
+    }
+
+    label[for*='3']:before {
+        content: '\f16b';
+    }
+
+    label[for*='4']:before {
+        content: '\f1a9';
+    }
+
+    label:hover {
+        color: #888;
+        cursor: pointer;
+    }
+
+    input:checked+label {
+        color: #555;
+        border: 1px solid #ddd;
+        border-top: 2px solid orange;
+        border-bottom: 1px solid #fff;
+    }
+
+    #tab1:checked~#content1,
+    #tab2:checked~#content2,
+    #tab3:checked~#content3,
+    #tab4:checked~#content4 {
+        display: block;
+    }
+
+    @media screen and (max-width: 650px) {
+        label {
+            font-size: 0;
+        }
+
+        label:before {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        label {
+            padding: 15px;
+        }
+    }
+</style> -->
 
 <body>
     <!--顶部-->
@@ -20,9 +119,17 @@
             <ul>
                 <li><i class="nav_1"></i><a href="digital-screen.html">采集概况</a> </li>
                 <li><i class="nav_2"></i><a href="quota.html">指标分析</a> </li>
-                <li class="nav_active"></i><a href="trend.html">趋势分析</a> </li>
-                <!-- <li><i class="nav_4"></i><a href="vip-list.html">大客户一览表</a> </li> -->
+                <li class="nav_active"><i class="nav_3"></i><a href="trend.html">趋势分析</a> </li>
             </ul>
+            <!-- <ul>
+                <div class="btn-link" <input id="tab1" type="radio" name="tabs" >
+                    <label for="tab1">采集概况</label><a href="NCDindex.html"></a>
+                    <input id="tab2" type="radio" name="tabs">
+                    <label for="tab2">指标分析</label><a href="quota.html"></a>
+                    <input id="tab3" type="radio" name="tabs" checked>
+                    <label for="tab3">趋势分析</label><a href="trend.html"></a>
+                </div>
+            </ul> -->
         </div>
         <div class="header_center left" style="position:relative">
 
@@ -47,8 +154,7 @@
                     </div>
                     <div id="lineChart1" style="width: 52%;height: 66%;display: inline-block;"></div>
                     <!-- white-space:nowrap 强制不换行 -->
-                    <div 
-                        style="width: 100%;height: 20%;display: inline-block;color:red;position: absolute;right: 2%;top:
+                    <div style="width: 100%;height: 20%;display: inline-block;color:red;position: absolute;right: 2%;top:
                         8%;white-space: nowrap">
 
                         <div style="display: inline-block;width:33%;text-align:center;">

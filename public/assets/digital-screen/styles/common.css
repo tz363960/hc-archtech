@@ -101,7 +101,7 @@ a:hover{
 }
 .header_center h2{
    margin-top: 16px !important;
-   font-size: 22px !important;
+   font-size: 26px !important;
 
 }
 .color_font{
@@ -161,7 +161,7 @@ a:hover{
     color: #ffffff;
     /*display: inline-block;*/
     /*padding: 0 15px 0 5px;*/
-    font-size: 14px;
+    font-size: 20px;
 }
 /*.nav>ul>li:hover .li_ul{*/
     /*display: block;*/
@@ -195,7 +195,6 @@ a:hover{
 }
 .nav_3{
     background-image: url("../images/nav_3.png");
-
 }
 .nav_4{
     background-image: url("../img/nav_4.png");
@@ -212,13 +211,21 @@ a:hover{
 .nav_8{
     background-image: url("../img/nav_9.png");
 }
-.nav_active{
-    border-bottom: 4px solid #4b8df8;
-    box-shadow: -10px 0px 15px #034c6a inset, /*å·¦è¾¹é˜´å½±*/
-    0px -10px 15px #034c6a inset, /*ä¸Šè¾¹é˜´å½±*/
-    10px 0px 15px #034c6a inset, /*å³è¾¹é˜´å½±*/
+/* .nav_active{
+    border-bottom: -20px solid #4b8df8;
+    box-shadow: -10px 0px 15px #034c6a inset, 
+    -20px -10px -15px #034c6a inset, 
+    -20px 0px -15px #034c6a inset, 
     0px 10px 15px #034c6a inset;
 
+    box-sizing: border-box;
+} */
+.nav_active{
+    border-bottom: 4px solid #4b8df8;
+    box-shadow: -10px 0px 15px #034c6a inset, 
+    0px -10px 15px #034c6a inset,
+    10px 0px 15px #034c6a inset, 
+    0px 10px 15px #034c6a inset;
     box-sizing: border-box;
 }
 .con{
