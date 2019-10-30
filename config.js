@@ -19,6 +19,10 @@ module.exports = {
         database: 'zemenbank'
     },
     authIdAndSecret : {
+        'cxn1': {
+            "FORGE_ID": "chdugm33WTNMX9xeSAHWUZBHDJVlJkhS",
+            "FORGE_SECRET": "GQCnwaqCncPs7fhj"
+        },
         'cxn2': {
             "FORGE_ID": "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m",
             "FORGE_SECRET": "nA8YA1KcR5OjkDrG"
