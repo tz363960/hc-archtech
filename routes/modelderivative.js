@@ -98,7 +98,7 @@ router.post('/jobs/deleteobject',  (req, res, next) => {
     };
     try {
         oAuth2TwoLegged.authenticate().then(function(credentials){
-            console.log("**** 獲取 Credentials",credentials);
+            console.log("**** 获取 Credentials",credentials);
             
             deleteFile(bucketKey, RealObjectName).then(function(deleteRes) {
                 console.log("**** 返回200就对了:", deleteRes.statusCode);
@@ -127,7 +127,7 @@ router.post('/jobs/deletebucket',  (req, res, next) => {
 
     try {
         oAuth2TwoLegged.authenticate().then(function(credentials){
-            console.log("**** 獲取 Credentials",credentials);
+            console.log("**** 获取 Credentials",credentials);
             deleteBucket(bucketKey).then(function(deleteRes) {
                 console.log("**** 返回200就对了:", deleteRes.statusCode);
             },defaultHandleError);
