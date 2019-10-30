@@ -32,7 +32,7 @@ router.get('/buckets', async (req, res, next) => {
         try {
             // Retrieve buckets from Forge using the [BucketsApi](https://github.com/Autodesk-Forge/forge-api-nodejs-client/blob/master/docs/BucketsApi.md#getBuckets)
             const buckets = await new BucketsApi().getBuckets({ limit: 64 }, req.oauth_client, req.oauth_token);
-            res.json(buckets.body.items.map((bucket) => {   //bucketname这里有问题
+            res.json(buckets.body.items.map((bucket) => {   //bucket这里有问题
                 return {
                     id: bucket.bucketKey,
 
