@@ -73,3 +73,4 @@ function getForgeToken(callback) { //接收后端传来的token
 		}
 	});
 }
+
