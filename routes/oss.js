@@ -6,17 +6,22 @@ const { BucketsApi, ObjectsApi, PostBucketsPayload } = require('forge-apis');
 const { getClient, getInternalToken } = require('./common/oauth');
 const config = require('../config');
 const cookieParse = require('cookie-parser');
+var ForgeSDK = require('../node_modules/forge-apis/src/index');
 
 let router = express.Router();
 var userCookiesName;
 var authIdAndSecret = config.authIdAndSecret;
+
 
 // Middleware for obtaining a token for each request.
 router.use(async (req, res, next) => {
     userCookiesName = req.cookies.separateName;
     var client_id = authIdAndSecret[userCookiesName].FORGE_ID;
     var client_secret = authIdAndSecret[userCookiesName].FORGE_SECRET;
-    const token = await getInternalToken(client_id, client_secret);
+    // var oAuth2TwoLegged = new ForgeSDK.AuthClientTwoLegged(client_id, client_secret,
+    //     ['data:write', 'data:read', 'bucket:read', 'bucket:update', 'bucket:create', 'bucket:delete'], true);
+    // await oAuth2TwoLegged.authenticate();   // 强制刷新token好像也没有用？
+    var token = await getInternalToken(client_id, client_secret);
     req.oauth_token = token;
     req.oauth_client = getClient(client_id,client_secret);
     next();

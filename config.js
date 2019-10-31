@@ -30,6 +30,10 @@ module.exports = {
         'cxn3':{
             "FORGE_ID": "EAImUtWq2VNlA3VAA7ZBWYdJ2KLZksiU",
             "FORGE_SECRET": "zzXT3Ix7dt76Bprd",
+        },
+        'cxn4':{
+            "FORGE_ID": "Qeul9eD5jp0ySqJrdDnvjEkqmrryZqPO",
+            "FORGE_SECRET": "KOB1WypAjo6XO3mw",
         }
     }
 }
