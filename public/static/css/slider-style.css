@@ -948,6 +948,7 @@ Start of footer [*12]
 }
 .copy-right {
 	padding: 25px 0px 10px 0px;
+	text-align: center;
 }
 .menu-list li a {
 	color: #3b4f7d; 
