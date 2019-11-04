@@ -27,14 +27,15 @@ app.use(function (req, res, next) { //登录拦截器,这个一定要放在expre
                 if (new Date().getTime() - cookieLogin.times[i] > 6000000) { // 大于100分钟的token就删除
                     cookieLogin.times.splice(i, 1);
                     cookieLogin.tokens.splice(i, 1);
-                    if (i != 0) { i--; }
+                    if (i != 0) {
+                        i--;
+                    }
                 }
             }
         }
         if (userCookies == undefined) {
             return res.redirect('/page-login.html');
-        }
-        else {
+        } else {
             if (!cookieLogin.tokens.includes(userCookies)) { //通过判断控制用户登录后不能访问登录页面；
                 return res.redirect('/page-login.html');
             }
@@ -46,14 +47,16 @@ app.use(function (req, res, next) { //登录拦截器,这个一定要放在expre
 
 // 注册界面操作
 app.post('/Account/Hcregister', function (req, res) {
-    var form = new multiparty.Form({ uploadDir: './uploads' });
+    var form = new multiparty.Form({
+        uploadDir: './uploads'
+    });
     var sqlconnection = mysql.createConnection(config.sqlconnection);
     sqlconnection.connect();
 
     // 读取数据
     function sqlRead() {
-        var p = new Promise(function (resolve, reject) {    // 用promise的resolve把数据传到then后面的函数中
-            var sql = 'SELECT * FROM uidpswd';              // reject把数据传到catch后面的函数中
+        var p = new Promise(function (resolve, reject) { // 用promise的resolve把数据传到then后面的函数中
+            var sql = 'SELECT * FROM uidpswd'; // reject把数据传到catch后面的函数中
             //查
             sqlconnection.query(sql, (err, result) => {
                 if (err) {
@@ -79,10 +82,9 @@ app.post('/Account/Hcregister', function (req, res) {
                 var n = 0;
                 if (fields.userName[0].indexOf("'") >= 0 || fields.userName[0].indexOf('"') >= 0 || fields.password[0].indexOf("'") >= 0 || fields.password[0].indexOf('"') >= 0) {
                     res.send('存在非法字符');
-                }
-                else {
+                } else {
                     for (var i = 0; i < toDoJson.length; i++) {
-                        if (toDoJson[i].userName == fields.userName[0]) {   //这个是文件夹本身
+                        if (toDoJson[i].userName == fields.userName[0]) { //这个是文件夹本身
                             n++;
                         }
                     }
@@ -90,8 +92,7 @@ app.post('/Account/Hcregister', function (req, res) {
                         replyDate.message = '账号已存在';
                         replyDate.state = 'exist';
                         res.send(replyDate);
-                    }
-                    else {
+                    } else {
                         // toDoJson.push({ userName: fields.userName[0], phones: fields.phones[0], name: fields.name[0], password: md5(fields.password[0]) });
                         // fs.writeFileSync('public/datas/useridpswd.json', JSON.stringify(toDoJson), function (err) {
                         // });
@@ -124,12 +125,14 @@ app.post('/Account/Hcregister', function (req, res) {
 
 // 登录界面操作
 app.post('/Account/Hclogin', function (req, res) {
-    var form = new multiparty.Form({ uploadDir: './uploads' });
+    var form = new multiparty.Form({
+        uploadDir: './uploads'
+    });
     var clientIP = req.ip;
     var clientHost = req.hostname;
     var clientUrl = req.headers.origin;
     //格式化输出登录时间
-    Date.prototype.Format = function(fmt) { //author: meizz 
+    Date.prototype.Format = function (fmt) { //author: meizz 
         var o = {
             "M+": this.getMonth() + 1, //月份 
             "d+": this.getDate(), //日 
@@ -151,10 +154,10 @@ app.post('/Account/Hclogin', function (req, res) {
 
     // 读取数据
     function sqlRead() {
-        var p = new Promise(function (resolve, reject) {    // 用promise的resolve把数据传到then后面的函数中
+        var p = new Promise(function (resolve, reject) { // 用promise的resolve把数据传到then后面的函数中
             var sql = 'SELECT * FROM uidpswd';
             var addSql_stat = 'INSERT INTO `users-stats`(`login-ip`,`login-time`, `login-address`,`login-url`) VALUES(?,?,?,?)';
-            var addSqlParams_stat = [clientIP,datetime,clientHost,clientUrl];
+            var addSqlParams_stat = [clientIP, datetime, clientHost, clientUrl];
             //查
             sqlconnection.query(sql, function (err, result) {
                 if (err) {
@@ -163,14 +166,13 @@ app.post('/Account/Hclogin', function (req, res) {
                 }
                 resolve(result);
             })
-            sqlconnection.query(addSql_stat,addSqlParams_stat,function (err, result) {
+            sqlconnection.query(addSql_stat, addSqlParams_stat, function (err, result) {
                 if (err) {
                     console.log('[SELECT ERROR] - ', err.message);
                     return;
                 }
                 resolve(result);
             })
-
         });
         return p;
     }
@@ -178,8 +180,7 @@ app.post('/Account/Hclogin', function (req, res) {
     form.parse(req, function (err, fields) {
         if (fields.userName[0].indexOf("'") >= 0 || fields.userName[0].indexOf('"') >= 0 || fields.password[0].indexOf("'") >= 0 || fields.password[0].indexOf('"') >= 0) {
             res.send('存在非法字符');
-        }
-        else {
+        } else {
             sqlRead().then(function (data) {
                 replyDate = {
                     message: '',
@@ -200,9 +201,15 @@ app.post('/Account/Hclogin', function (req, res) {
                             replyDate.userName = toDoJson[i].userName;
                             replyDate.name = toDoJson[i].name;
                             var token = new Date().getTime() + toDoJson[i].userName;
-                            res.cookie('ift', md5(token), { maxAge: 6000000 });
-                            res.cookie('username', encodeURI(toDoJson[i].name), { maxAge: 6000000 });
-                            res.cookie('separateName', toDoJson[i].userName,{ maxAge: 6000000 });
+                            res.cookie('ift', md5(token), {
+                                maxAge: 6000000
+                            });
+                            res.cookie('username', encodeURI(toDoJson[i].name), {
+                                maxAge: 6000000
+                            });
+                            res.cookie('separateName', toDoJson[i].userName, {
+                                maxAge: 6000000
+                            });
                             cookieLogin.tokens.push(md5(token));
                             cookieLogin.times.push(new Date().getTime());
                             res.json(replyDate);
