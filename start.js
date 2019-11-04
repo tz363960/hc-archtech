@@ -22,6 +22,7 @@ app.use('/api/forge/oauth', require('./routes/oauth'));
 app.use('/api/forge/oss', require('./routes/oss'));
 app.use('/api/forge/modelderivative', require('./routes/modelderivative'));
 app.use('/', require('./mysql/database_route'));
+//app.use('/', require('./mysql/clients_stats'));
 app.use('/', require('./routes/cxn'));   //use之后，cxn里面的当前路径相当于start的路径
 
 
@@ -41,3 +42,4 @@ app.listen(PORT, () => {
 });
 
 //end start.js
+
