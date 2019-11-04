@@ -126,6 +126,26 @@ app.post('/Account/Hcregister', function (req, res) {
 app.post('/Account/Hclogin', function (req, res) {
     var form = new multiparty.Form({ uploadDir: './uploads' });
     var clientIP = req.ip;
+    var clientHost = req.hostname;
+    var clientUrl = req.headers.origin;
+    //格式化输出登录时间
+    Date.prototype.Format = function(fmt) { //author: meizz 
+        var o = {
+            "M+": this.getMonth() + 1, //月份 
+            "d+": this.getDate(), //日 
+            "h+": this.getHours(), //小时 
+            "m+": this.getMinutes(), //分 
+            "s+": this.getSeconds(), //秒 
+            "S": this.getMilliseconds() //毫秒 
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+
+    var datetime = (new Date()).Format("yyyy-MM-dd hh:mm:ss");
+
     var sqlconnection = mysql.createConnection(config.sqlconnection);
     sqlconnection.connect();
 
@@ -133,6 +153,8 @@ app.post('/Account/Hclogin', function (req, res) {
     function sqlRead() {
         var p = new Promise(function (resolve, reject) {    // 用promise的resolve把数据传到then后面的函数中
             var sql = 'SELECT * FROM uidpswd';
+            var addSql_stat = 'INSERT INTO `users-stats`(`login-ip`,`login-time`, `login-address`,`login-url`) VALUES(?,?,?,?)';
+            var addSqlParams_stat = [clientIP,datetime,clientHost,clientUrl];
             //查
             sqlconnection.query(sql, function (err, result) {
                 if (err) {
@@ -141,6 +163,14 @@ app.post('/Account/Hclogin', function (req, res) {
                 }
                 resolve(result);
             })
+            sqlconnection.query(addSql_stat,addSqlParams_stat,function (err, result) {
+                if (err) {
+                    console.log('[SELECT ERROR] - ', err.message);
+                    return;
+                }
+                resolve(result);
+            })
+
         });
         return p;
     }
