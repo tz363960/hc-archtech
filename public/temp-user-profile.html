@@ -58,7 +58,7 @@
                 </tr>
                 <tr>
                   <td>到期时间:</td>
-                  <td><input type="text" class="form-control" id="dueDate"></td>
+                  <td><input type="text" class="form-control" name="dueDate"></td>
                 </tr>
                 <tr>
                   <td>类型:</td>
@@ -102,8 +102,8 @@
             <p>
               <input type="file" id="user-file-upload" name="uploadFile">
             </p>
-            <p class="help-block">待上传文件: <span id="user-get-filename" style="color:red"></span></p>
-            <button type="submit" class="btn btn-primary">提交</button>
+            <!-- <p class="help-block">待上传文件: <span id="user-get-filename" style="color:red"></span></p> -->
+            <button type="submit" class="btn btn-primary" id="tijiao">提交</button>
           </div>
         </div>
 
@@ -133,7 +133,7 @@
     </a>
   </div>
 </div>
-<script>
+<!-- <script>
   $(function () {
     var
       fileInput = document.getElementById('user-file-upload'),
@@ -142,31 +142,39 @@
       filePath.innerText = fileInput.value;
     });
   });
-</script>
+</script> -->
 
 <script>
-  var logic = function (currentDateTime) {
-    if (currentDateTime.getDay() == 6) {
-      this.setOptions({
-        minTime: '11:00'
-      });
-    } else
-      this.setOptions({
-        minTime: '8:00'
-      });
-  };
-  $('#dueDate').datetimepicker({
-    onChangeDateTime: logic,
-    onShow: logic
-  });
-  $('#date_create').datetimepicker({
-    onChangeDateTime: logic,
-    onShow: logic
-  });
+  $(function () {
+    var logic = function (currentDateTime) {
+      if (currentDateTime.getDay() == 6) {
+        this.setOptions({
+          minTime: '11:00'
+        });
+      } else
+        this.setOptions({
+          minTime: '8:00'
+        });
+    };
+    $('#dueDate').datetimepicker({
+      onChangeDateTime: logic,
+      onShow: logic
+    });
+    $('#date_create').datetimepicker({
+      onChangeDateTime: logic,
+      onShow: logic
+    });
+    $("#tijiao").on('click', function () {
+      setTimeout(function () {
+        $("#cc-modal-mask").remove();   // 此命令是删除，删掉浮动窗口
+      }, 100)
+    });
+  })
+
 </script>
 
-<!-- 用了vue之后datetimepiker不起作用 -->
-<script>  
+
+<script>
   var forge_modal = new Vue({
     el: '#modal-content',
     data: {
