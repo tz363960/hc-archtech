@@ -2,11 +2,11 @@
   <div id="cc-modal" class="issue-detail">
     <div id="modal-content" class="col-md-12">
       <!-- 表单开始 -->
-      <form role="form" action="/xx-upload" method="POST">
+      <form role="form" action="/changeInformationUpload" method="GET">
         <div class="row">
           <div id="issue-header" class="col-md-12">
             <div id="issue-head" class="col-md-10 col-xs-9 nopadding">
-              <h3><i class="fa fa-address-book-o"> #160</i> 肖崔赫</h3>
+              <h3><i class="fa fa-address-book-o"> #160</i> {{userChineseName}}</h3>
               <div id="issue-metadata">
                 <div>
                   <div class="issue-rulename"><i class="fa fa-check-square-o"></i> 录入信息</div>
@@ -38,38 +38,38 @@
                   <td>状态</td>
                   <td>
                     <select class="form-control input-md" name="issueStatus">
-                      <option value="">新任务</option>
-                      <option value="">需要修改</option>
-                      <option value="">审核完成</option>
-                      <option value="">审定完成</option>
+                      <option value="新任务">新任务</option>
+                      <option value="需要修改">需要修改</option>
+                      <option value="审核完成">审核完成</option>
+                      <option value="审定完成">审定完成</option>
                     </select>
                   </td>
                 </tr>
                 <tr>
                   <td>优先级:</td>
                   <td>
-                    <select class="form-control input-md">
-                      <option value="">正常</option>
-                      <option value="">紧急</option>
-                      <option value="">主要</option>
-                      <option value="">次要</option>
+                    <select class="form-control input-md" name="issuePriority">
+                      <option value="正常">正常</option>
+                      <option value="紧急">紧急</option>
+                      <option value="主要">主要</option>
+                      <option value="次要">次要</option>
                     </select>
                   </td>
                 </tr>
                 <tr>
                   <td>到期时间:</td>
-                  <td><input type="text" class="form-control" id="datetimepicker1"></td>
+                  <td><input type="text" class="form-control" id="dueDate"></td>
                 </tr>
                 <tr>
                   <td>类型:</td>
                   <td>
                     <select class="form-control input-md" name="issueType">
-                      <option value="">事务</option>
-                      <option value="">错误</option>
-                      <option value="">差异</option>
-                      <option value="">需求</option>
-                      <option value="">询问</option>
-                      <option value="">评论</option>
+                      <option value="事务">事务</option>
+                      <option value="错误">错误</option>
+                      <option value="差异">差异</option>
+                      <option value="需求">需求</option>
+                      <option value="询问">询问</option>
+                      <option value="评论">评论</option>
                     </select>
                   </td>
                 </tr>
@@ -82,7 +82,7 @@
                   <td>
                     创建时间:
                   </td>
-                  <td><input type="text" class="form-control" id="datetimepicker2" name="dataCreate"></td>
+                  <td><input type="text" class="form-control" id="date_create" name="dataCreate"></td>
                 </tr>
                 <tr>
                   <td>分配给:</td>
@@ -93,42 +93,14 @@
             </table>
           </div>
           <!-- datetimepicker -->
-          <script>
-            var logic = function (currentDateTime) {
-              if (currentDateTime.getDay() == 6) {
-                this.setOptions({
-                  minTime: '11:00'
-                });
-              } else
-                this.setOptions({
-                  minTime: '8:00'
-                });
-            };
-            $('#datetimepicker1').datetimepicker({
-              onChangeDateTime: logic,
-              onShow: logic
-            });
-            $('#datetimepicker2').datetimepicker({
-              onChangeDateTime: logic,
-              onShow: logic
-            });
-          </script>
+
           <!-- </i>后面跟字即可显示 -->
           <div class="col-md-4">
             <h4><i class="fa fa-paperclip"></i> 附件</h4>
-            <script>
-              $(function () {
-                var
-                  fileInput = document.getElementById('user-file-upload'),
-                  filePath = document.getElementById('user-get-filename');
-                fileInput.addEventListener('change', function () {
-                  filePath.innerText = fileInput.value;
-                });
-              });
-            </script>
+
             <!-- action：表示当前表单中的内容提交给哪个页面进行处理 -->
             <p>
-              <input type="file" id="user-file-upload" name="test">
+              <input type="file" id="user-file-upload" name="uploadFile">
             </p>
             <p class="help-block">待上传文件: <span id="user-get-filename" style="color:red"></span></p>
             <button type="submit" class="btn btn-primary">提交</button>
@@ -162,20 +134,53 @@
   </div>
 </div>
 <script>
+  $(function () {
+    var
+      fileInput = document.getElementById('user-file-upload'),
+      filePath = document.getElementById('user-get-filename');
+    fileInput.addEventListener('change', function () {
+      filePath.innerText = fileInput.value;
+    });
+  });
+</script>
+
+<script>
+  var logic = function (currentDateTime) {
+    if (currentDateTime.getDay() == 6) {
+      this.setOptions({
+        minTime: '11:00'
+      });
+    } else
+      this.setOptions({
+        minTime: '8:00'
+      });
+  };
+  $('#dueDate').datetimepicker({
+    onChangeDateTime: logic,
+    onShow: logic
+  });
+  $('#date_create').datetimepicker({
+    onChangeDateTime: logic,
+    onShow: logic
+  });
+</script>
+
+<!-- 用了vue之后datetimepiker不起作用 -->
+<script>  
   var forge_modal = new Vue({
     el: '#modal-content',
     data: {
       isFilled: '',
-      tips:'没有输入描述'
+      tips: '没有输入描述',
+      userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1]))
     },
-    watch:{
-      isFilled:function(isFilled){
-        if (isFilled){
+    watch: {
+      isFilled: function (isFilled) {
+        if (isFilled) {
           this.tips = '已有输入';
-        }else{
+        } else {
           this.tips = '没有输入描述';
         }
-        
       }
     }
   })
