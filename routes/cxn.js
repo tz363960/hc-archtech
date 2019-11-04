@@ -192,6 +192,11 @@ app.get('/material-tracking/newCraft', function (req, res) {
     sqlconnection.end();
 });
 
+// 修改信息上传
+app.get('/changeInformationUpload', function (req, res) {
+    console.log(req.query);
+});
+
 function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据库
     // SELECT table_name FROM information_schema.TABLES WHERE table_name ='表名';   判断一个表是否存在
     const fs = require('fs');
