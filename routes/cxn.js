@@ -55,6 +55,7 @@ app.get('/constructTable', function (req, res) {
     });
 });
 
+
 // 设计数据管理上传数据
 app.get('/DesignTable', function (req, res) {
     var file = './public/datas/designTable.json'; //文件路径，相对路径
@@ -196,6 +197,8 @@ app.get('/material-tracking/newCraft', function (req, res) {
 app.get('/changeInformationUpload', function (req, res) {
     console.log(req.query);
 });
+
+
 
 function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据库
     // SELECT table_name FROM information_schema.TABLES WHERE table_name ='表名';   判断一个表是否存在

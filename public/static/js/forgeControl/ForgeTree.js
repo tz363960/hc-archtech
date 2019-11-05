@@ -259,3 +259,4 @@ function translateObject(node) {
         },
     })
 };
+
