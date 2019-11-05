@@ -2,7 +2,7 @@
   <div id="cc-modal" class="issue-detail">
     <div id="modal-content" class="col-md-12">
       <!-- 表单开始 -->
-      <form role="form" action="/changeInformationUpload" method="GET">
+      <form role="form" action="/forge-table/changeInformationUpload" method="GET">
         <div class="row">
           <div id="issue-header" class="col-md-12">
             <div id="issue-head" class="col-md-10 col-xs-9 nopadding">
@@ -103,7 +103,7 @@
               <input type="file" id="user-file-upload" name="uploadFile">
             </p>
             <!-- <p class="help-block">待上传文件: <span id="user-get-filename" style="color:red"></span></p> -->
-            <button type="submit" class="btn btn-primary" id="tijiao">提交</button>
+            <button type="submit" class="btn btn-primary" v-on:click="submitExcel">提交</button>
           </div>
         </div>
 
@@ -164,11 +164,6 @@
       onChangeDateTime: logic,
       onShow: logic
     });
-    $("#tijiao").on('click', function () {
-      setTimeout(function () {
-        $("#cc-modal-mask").remove();   // 此命令是删除，删掉浮动窗口
-      }, 100)
-    });
   })
 
 </script>
@@ -189,6 +184,14 @@
         } else {
           this.tips = '请输入描述';
         }
+      }
+    },
+    methods: {
+      submitExcel: function () {
+        setTimeout(function () {
+          $("#cc-modal-mask").remove();   // 此命令是删除，删掉浮动窗口
+          return false;
+        }, 150)
       }
     }
   })

@@ -193,8 +193,9 @@ app.get('/material-tracking/newCraft', function (req, res) {
 });
 
 // 修改信息上传
-app.get('/changeInformationUpload', function (req, res) {
+app.get('/forge-table/changeInformationUpload', function (req, res) {
     console.log(req.query);
+    res.redirect('/forge-table.html');
 });
 
 function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据库
