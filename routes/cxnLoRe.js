@@ -11,12 +11,12 @@ const config = require('../config');
 let app = express();
 app.use(cookieParse());
 
-//登录拦截器,这个一定要放在express.static前面防止静态的favicon.ico影响程序运行
+//登录拦截器,这个一定要放在express.static前面
 var cookieLogin = { //储存在服务器端的token
     tokens: [],
     times: []
 };
-app.use(function (req, res, next) { //登录拦截器,这个一定要放在express.static前面防止静态的favicon.ico影响程序运行
+app.use(function (req, res, next) { //登录拦截器,这个一定要放在express.static前面
     var url = req.path; //获取浏览器中当前访问的nodejs路由地址；
     var userCookies = req.cookies.ift; //获取客户端存取的cookie,userCookies为cookie的名称
 
@@ -132,7 +132,7 @@ app.post('/Account/Hclogin', function (req, res) {
     var clientHost = req.hostname;
     var clientUrl = req.headers.origin;
     //格式化输出登录时间
-    Date.prototype.Format = function (fmt) { //author: meizz 
+    Date.prototype.Format = function (fmt) {
         var o = {
             "M+": this.getMonth() + 1, //月份 
             "d+": this.getDate(), //日 

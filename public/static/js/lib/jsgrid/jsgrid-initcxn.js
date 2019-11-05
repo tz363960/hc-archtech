@@ -127,5 +127,14 @@ var forgeTableHead = new Vue({
     el: '#vueHeader',
     data: {
         userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1]))  // js截取两个字符串之间的内容
+    },
+    methods: {
+        clearCookie: function () {
+            var date = new Date();
+            alert('即将退出并返回桌面');
+            window.document.cookie = "ift" + "=" + '' + ";path=/;expires=" + date.toGMTString();
+            window.document.cookie = "username" + "=" + '' + ";path=/;expires=" + date.toGMTString();
+            window.document.cookie = "separateName" + "=" + '' + ";path=/;expires=" + date.toGMTString();
+        }
     }
 })
