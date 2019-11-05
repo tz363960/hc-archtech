@@ -11,25 +11,6 @@ const config = require('../config');
 let app = express();
 
 
-//连接mysql
-app.get('/sqlTest', function (req, res) {
-    var sqlconnection = mysql.createConnection(config.sqlconnection);
-    sqlconnection.connect();
-    var sql = 'SELECT * FROM WeeklyReportTree';
-    //查
-    sqlconnection.query(sql, function (err, result) {
-        if (err) {
-            console.log('[SELECT ERROR] - ', err.message);
-            return;
-        }
-        console.log('--------------------------SELECT----------------------------');
-        console.log(result);
-        console.log('------------------------------------------------------------');
-        res.send(JSON.stringify(result));
-    });
-    sqlconnection.end();
-})
-
 // 点云数据,与python进行数据交互
 app.get('/test_post/nn', function (req, res) {
     // exec 执行的时候会使用一个缓冲区，stdout 或 stderr 上允许的最大字节数，默认大小是200 × 1024。
@@ -194,10 +175,21 @@ app.get('/material-tracking/newCraft', function (req, res) {
 });
 
 // 修改信息上传
-app.get('/changeInformationUpload', function (req, res) {
-    console.log(req.query);
-});
+app.get('/forge-table/changeInformationUpload', function (req, res) {
+    var n = 0;
+    for (var key in req.query) {
+        if (!req.query[key]) {  // key name
+            n += 1;
+        }
+    }
+    if (n > 1) {
+        res.send('数据不能为空');
+    } else {
+        console.log(req.query);
+        res.redirect('/forge-table.html');
+    }
 
+});
 
 
 function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据库
