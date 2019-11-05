@@ -25,8 +25,8 @@
             <h4><i class="fa fa-wpforms"></i> 描述</h4>
             <div class="form-group">
               <label for="name">对此事件描述</label>
-              <textarea class="form-control" name="issueDescribe" rows="5" v-model="isFilled"></textarea>
-              <span>{{tips}}</span>
+              <textarea class="form-control" name="issueDescribe" rows="5" v-model="isTips"></textarea>
+              <span style="color: red;">{{tipsShow}}</span>
             </div>
             <p class="issue-description"></p>
           </div>
@@ -44,6 +44,7 @@
                       <option value="审定完成">审定完成</option>
                     </select>
                   </td>
+
                 </tr>
                 <tr>
                   <td>优先级:</td>
@@ -58,7 +59,8 @@
                 </tr>
                 <tr>
                   <td>到期时间:</td>
-                  <td><input type="text" class="form-control" name="dueDate"></td>
+                  <td><input type="text" class="form-control" name="dueDate" v-model="isdueDate"></td>
+                  <td style="color:red">{{dueDateShow}}</td>
                 </tr>
                 <tr>
                   <td>类型:</td>
@@ -75,19 +77,24 @@
                 </tr>
                 <tr>
                   <td>发起人:</td>
-                  <td><input type="text" class="form-control" placeholder="创建人" name="creatorMan">
+                  <td><input type="text" class="form-control" placeholder="创建人" name="creatorMan"
+                      v-model="iscreatorMan">
                   </td>
+                  <td style="color:red">{{creatorManShow}}</td>
                 </tr>
                 <tr>
                   <td>
                     创建时间:
                   </td>
-                  <td><input type="text" class="form-control" id="date_create" name="dataCreate"></td>
+                  <td><input type="text" class="form-control" name="dataCreate" v-model="isdataCreate"></td>
+                  <td style="color:red">{{dataCreateShow}}</td>
                 </tr>
                 <tr>
                   <td>分配给:</td>
-                  <td><input type="text" class="form-control" placeholder="分配给..." name="assignToWho">
+                  <td><input type="text" class="form-control" placeholder="分配给..." name="assignToWho"
+                      v-model="IsassignToWho">
                   </td>
+                  <td style="color:red">{{assignToWhoShow}}</td>
                 </tr>
               </tbody>
             </table>
@@ -103,7 +110,7 @@
               <input type="file" id="user-file-upload" name="uploadFile">
             </p>
             <!-- <p class="help-block">待上传文件: <span id="user-get-filename" style="color:red"></span></p> -->
-            <button type="submit" class="btn btn-primary" v-on:click="submitExcel">提交</button>
+            <button :type="isDisable" class="btn btn-primary" v-on:click="submitExcel">提交</button>
           </div>
         </div>
 
@@ -112,7 +119,8 @@
             <h4><i class="fa fa-commenting-o"></i> 讨论</h4>
             <div class="form-group">
               <label for="name">对此事件讨论</label>
-              <textarea class="form-control" rows="3" name="issueTalk"></textarea>
+              <textarea class="form-control" rows="3" name="issueTalk" v-model="IsissueTalk"></textarea>
+              <span style="color: red;">{{issueTalkShow}}</span>
             </div>
           </div>
         </div>
@@ -173,25 +181,83 @@
   var forge_modal = new Vue({
     el: '#modal-content',
     data: {
-      isFilled: '',
-      tips: '没有输入描述',
-      userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1]))
+      isTips: '',
+      tipsShow: '请填写该项',
+      userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1])),
+      issueTalkShow: '请填写该项',
+      IsissueTalk: '',
+      dueDateShow: '请填写该项',
+      isdueDate: '',
+      isdataCreate: '',
+      dataCreateShow: '请填写该项',
+      creatorManShow: '请填写该项',
+      iscreatorMan: '',
+      assignToWhoShow: '请填写该项',
+      IsassignToWho: '',
     },
     watch: {
-      isFilled: function (isFilled) {
-        if (isFilled) {
-          this.tips = '已有输入';
+      isTips: function (isTips) {
+        if (isTips) {
+          this.tipsShow = '';
         } else {
-          this.tips = '请输入描述';
+          this.tipsShow = '请填写该项';
         }
-      }
+      },
+      IsissueTalk: function (IsissueTalk) {
+        if (IsissueTalk) {
+          this.issueTalkShow = '';
+        } else {
+          this.issueTalkShow = '请填写该项';
+        }
+      },
+      isdueDate: function (isdueDate) {
+        if (isdueDate) {
+          this.dueDateShow = '';
+        } else {
+          this.dueDateShow = '请填写该项';
+        }
+      },
+      isdataCreate: function (isdataCreate) {
+        if (isdataCreate) {
+          this.dataCreateShow = '';
+        } else {
+          this.dataCreateShow = '请填写该项';
+        }
+      },
+      iscreatorMan: function (iscreatorMan) {
+        if (iscreatorMan) {
+          this.creatorManShow = '';
+        } else {
+          this.creatorManShow = '请填写该项';
+        }
+      },
+      IsassignToWho: function (IsassignToWho) {
+        if (IsassignToWho) {
+          this.assignToWhoShow = '';
+        } else {
+          this.assignToWhoShow = '请填写该项';
+        }
+      },
     },
     methods: {
       submitExcel: function () {
-        setTimeout(function () {
-          $("#cc-modal-mask").remove();   // 此命令是删除，删掉浮动窗口
-          return false;
-        }, 150)
+        if (this.isDisable() == 'submit') {
+          setTimeout(function () {
+            $("#cc-modal-mask").remove();   // 此命令是删除，删掉浮动窗口
+            return false;
+          }, 150);
+        } //目前提交成功不能显示
+      }
+    },
+    computed: {
+      isDisable: function () {
+        var disable;
+        if (!this.tipsShow && !this.issueTalkShow && !this.dueDateShow && !this.dataCreateShow && !this.creatorManShow && !this.assignToWhoShow) 
+        {
+          disable = 'submit';
+        }
+        else disable = 'button';
+        return disable
       }
     }
   })
