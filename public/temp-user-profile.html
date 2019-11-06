@@ -197,46 +197,22 @@
     },
     watch: {
       isTips: function (isTips) {
-        if (isTips) {
-          this.tipsShow = '';
-        } else {
-          this.tipsShow = '请填写该项';
-        }
+        this.tipsShow = isTips ? '' : '请填写该项';
       },
       IsissueTalk: function (IsissueTalk) {
-        if (IsissueTalk) {
-          this.issueTalkShow = '';
-        } else {
-          this.issueTalkShow = '请填写该项';
-        }
+        this.issueTalkShow = IsissueTalk ? '' : '请填写该项';
       },
       isdueDate: function (isdueDate) {
-        if (isdueDate) {
-          this.dueDateShow = '';
-        } else {
-          this.dueDateShow = '请填写该项';
-        }
+        this.dueDateShow = isdueDate ? '' : '请填写该项';
       },
       isdataCreate: function (isdataCreate) {
-        if (isdataCreate) {
-          this.dataCreateShow = '';
-        } else {
-          this.dataCreateShow = '请填写该项';
-        }
+        this.dataCreateShow = isdataCreate ? '' : '请填写该项';
       },
       iscreatorMan: function (iscreatorMan) {
-        if (iscreatorMan) {
-          this.creatorManShow = '';
-        } else {
-          this.creatorManShow = '请填写该项';
-        }
+        this.creatorManShow = iscreatorMan ? '' : '请填写该项';
       },
       IsassignToWho: function (IsassignToWho) {
-        if (IsassignToWho) {
-          this.assignToWhoShow = '';
-        } else {
-          this.assignToWhoShow = '请填写该项';
-        }
+        this.assignToWhoShow = IsassignToWho ? '' : '请填写该项';
       },
     },
     methods: {
@@ -252,11 +228,11 @@
     computed: {
       isDisable: function () {
         var disable;
-        if (!this.tipsShow && !this.issueTalkShow && !this.dueDateShow && !this.dataCreateShow && !this.creatorManShow && !this.assignToWhoShow) 
-        {
+        if (!this.tipsShow && !this.issueTalkShow && !this.dueDateShow && !this.dataCreateShow && !this.creatorManShow && !this.assignToWhoShow) {
           disable = 'submit';
+        } else {
+          disable = 'button';
         }
-        else disable = 'button';
         return disable
       }
     }
