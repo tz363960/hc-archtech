@@ -1,5 +1,6 @@
 import urllib, urllib.request, sys
-
+#免费版本每秒可调用1次。本地5千万条IP，如果取不到会实时按顺序从淘宝、京东、百度、腾讯等大站依次抓取IP归属地，是很全的IP地址库。
+#免费条数 1000。所以还是慎重使用！！！
 host = 'http://saip.market.alicloudapi.com'
 path = '/ip'
 method = 'GET'
