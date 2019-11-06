@@ -11,6 +11,6 @@ url = host + path + '?' + querys
 request = urllib.request.Request(url)
 request.add_header('Authorization', 'APPCODE ' + appcode)
 response = urllib.request.urlopen(request)
-content = response.read()
+content = response.read().decode('utf-8')
 if (content):
     print(content)

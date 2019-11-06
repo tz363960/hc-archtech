@@ -111,6 +111,7 @@ router.post('/jobs/deleteobject',  (req, res, next) => {
     }
 });
 
+
 /**
  * 刪除Bucket.
  * 两条腿认证.
@@ -138,6 +139,8 @@ router.post('/jobs/deletebucket',  (req, res, next) => {
     }
 });
 
+
+
 /////////////////////////////////////////错误提示///////////////////////////////////////////////////////
 function defaultHandleError(err) {
     console.error('\x1b[31m Error:', err, '\x1b[0m');
@@ -148,6 +151,7 @@ var getBuckets = function () {
     console.log("**** Getting all buckets");
     return bucketsApi.getBuckets({}, oAuth2TwoLegged, oAuth2TwoLegged.getCredentials());
 };
+
 
 module.exports = router;
 // module.exports.app = app;
