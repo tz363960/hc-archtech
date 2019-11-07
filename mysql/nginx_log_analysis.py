@@ -33,7 +33,6 @@ def extract(line):
     else:
         raise Exception('No match')
  
- 
 ops = {
     'datetime': lambda timestr: datetime.strptime(timestr, "%d/%b/%Y:%H:%M:%S %z"),
     'request': lambda request: dict(zip(('method', 'url', 'protocol'), request.split())),
@@ -41,28 +40,20 @@ ops = {
     'size': int
 }
 
-def ip_city(ip):
-    c= reader.city(ip)
-    c1 = c.city
-    return c1
- 
+
 if __name__ == '__main__':
     clearData(filePath)
     reader = geoip2.database.Reader('F:\Vue\GeoLite2-Country_20191029\GeoLite2-City.mmdb')
     # create a dataframe to store the filtered data
-    log_df =pd.DataFrame(columns=('ip','city','datetime','status','user_agent','size'))
+    log_df =pd.DataFrame(columns=('ip','datetime','status','user_agent','size'))
     with open(filePath, "r", encoding='utf-8') as f1:
         for line in f1:
             try:
                 log_pro = extract(line)
-
             except:
                 pass
 
-            trans_city = reader.city(log_pro['remote_addr']).names['en']
-                
-           # _city = ip_city(log_pro['remote_addr']).names['en']
-            log_df = log_df.append(pd.DataFrame({'ip': [log_pro['remote_addr']],'city':['trans_city'],'datetime': [log_pro['datetime']],'status': [log_pro['status']],'user_agent': [log_pro['user_agent']],'size': [log_pro['size']]}))
+            log_df = log_df.append(pd.DataFrame({'ip': [log_pro['remote_addr']],'datetime': [log_pro['datetime']],'status': [log_pro['status']],'user_agent': [log_pro['user_agent']],'size': [log_pro['size']]}))
 
             # print(log_df)
             # print(log_pro['remote_addr'],log_pro['datetime'],log_pro['status'],log_pro['user_agent'],log_pro['size'])
