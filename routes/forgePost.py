@@ -42,4 +42,28 @@ class getToken:
         responsed2 = requests.get(url2, headers=header, data=json.dumps(mData1))
         return responsed2
 
- 
+fileRead = 'access.txt'
+with open(fileRead, 'r') as load_file:
+    tempFile = load_file.read()
+    ipPattern = re.compile(r'\d+\.\d+\.\d+\.\d+(?=\s-)')
+    allIps = ipPattern.findall(tempFile)
+    NotRepetitionIp = []
+    NotRepetitionIpAddress = []
+    for ip in allIps:
+        if ip not in NotRepetitionIp:
+            NotRepetitionIp.append(ip)
+    try:
+        for ip in NotRepetitionIp:
+            head = {
+                "User-Agent": random.choice(USER_AGENTS),
+                "Referer": "http://www.cip.cc/" + ip,
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+                'Connection': 'keep-alive'
+            }
+            tempHtml = requests.get('http://www.cip.cc/' + ip, headers=head, timeout=50).text
+            addressCompile = '(?<=' + ip + ').*?(?=数据三)'
+            htmlResult = re.findall(addressCompile, tempHtml, re.S)[0]
+            htmlResult = htmlResult.replace('\r', '').replace('\n', '').replace('\t', '')
+            NotRepetitionIpAddress.append(htmlResult)
+    except Exception as e:
+        print(e)
