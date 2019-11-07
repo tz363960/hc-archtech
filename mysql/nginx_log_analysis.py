@@ -58,5 +58,6 @@ if __name__ == '__main__':
             # print(log_df)
             # print(log_pro['remote_addr'],log_pro['datetime'],log_pro['status'],log_pro['user_agent'],log_pro['size'])
     
-    print(log_df.head())
+    print(log_df.describe())
+    print(log_df['ip'].describe())
 
