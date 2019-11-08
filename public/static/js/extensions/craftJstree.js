@@ -27,7 +27,7 @@ $(function () {
                 'folder': {
                     'icon': 'glyphicon glyphicon-folder-open'
                 },
-                'file': {
+                'files': {
                     'icon': 'glyphicon glyphicon-file'
                 }
             },
@@ -103,7 +103,7 @@ $(function () {
                             var treeNode = $('#jstree_gyk').jstree(true).get_selected(true)[0]; //选中的对象（文件）
                             console.log(treeNode);
                         },
-                        icon: 'glyphicon glyphicon-book'
+                        icon: 'glyphicon glyphicon-cloud'
                     },
                     deleteFile: {
                         label: "删除文件",
