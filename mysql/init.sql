@@ -10,6 +10,7 @@ CREATE USER 'rebuild'@'127.0.0.1' IDENTIFIED BY 'rebuild';
 GRANT ALL PRIVILEGES ON rebuild10.* TO 'rebuild'@'127.0.0.1';
 FLUSH PRIVILEGES;
 USE rebuild10;
+本脚本建议使用navicat执行， 或安装vscode mysql插件
 */
 
 -- #2 schemas
