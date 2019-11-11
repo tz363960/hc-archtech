@@ -42,6 +42,32 @@ class getToken:
         responsed2 = requests.get(url2, headers=header, data=json.dumps(mData1))
         return responsed2
 
+    # 传文件
+    def upload_file(self, autho):
+        header3 = {'Authorization': autho, 'Content-Type': 'application/octet-stream',
+                   'Content-Length': str(os.path.getsize(self.file_upload))}
+        url3 = 'https://developer.api.autodesk.com/oss/v2/buckets/' + self.bucketName + '/objects/' + self.file_upload
+        with open(self.file_upload, mode='rb') as fo:
+            sn = fo.read(os.path.getsize(self.file_upload))
+            fw = open(self.file_upload, "wb")
+            fw.write(sn)  # fw的这些操作就是因为读filename3时文件大小会出现问题，重新写一次二进制
+            fw.close()
+            fw = open(self.file_upload, "rb")
+            response3 = requests.put(url3, headers=header3, data=fw)
+            fw.close()
+            return response3
+
+    # 用于解urn码,并发起转换
+    def do_urn(self, autho, urn_number):
+        header = {'Authorization': autho, 'Content-Type': 'application/json'}  # 好几个用的是这个header
+        tempUrn = re.findall('"(.*?)"', urn_number)  # 用于解码,传文件的response3.text
+        urnEncode = base64.b64encode(tempUrn[3].encode('utf-8'))
+        urnEncodeEnd = str(urnEncode, 'utf-8').replace("=", "")
+        mData4 = {"input": {"urn": urnEncodeEnd}, "output": {"formats": [{"type": "svf", "views": ["2d", "3d"]}]}}
+        url4 = 'https://developer.api.autodesk.com/modelderivative/v2/designdata/job'
+        response4 = requests.post(url4, headers=header, data=json.dumps(mData4))
+        return response4, urnEncodeEnd
+
 fileRead = 'access.txt'
 with open(fileRead, 'r') as load_file:
     tempFile = load_file.read()
