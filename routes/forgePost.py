@@ -68,6 +68,45 @@ class getToken:
         response4 = requests.post(url4, headers=header, data=json.dumps(mData4))
         return response4, urnEncodeEnd
 
+    # 检查模型是否传完,如果报401，则是token问题
+    def _check_model_uploaded(self, autho, urnEncodeEnd):
+        header5 = {'Authorization': autho}
+        url5 = 'https://developer.api.autodesk.com/modelderivative/v2/designdata/' + urnEncodeEnd + '/manifest'
+        response5 = requests.get(url5, headers=header5)
+        return response5
+
+    # 检查是否有文件
+    def check_file_uploaded(self, autho):
+        header = {'Authorization': autho, 'Content-Type': 'application/json'}  # 好几个用的是这个header
+        urnDecode = 'urn:adsk.objects:os.object:' + self.bucketName + '/' + self.file_upload
+        urnEncode = base64.b64encode(urnDecode.encode('utf-8'))
+        urnEncodeEnd = str(urnEncode, 'utf-8').replace("=", "")
+        mData4 = {"input": {"urn": urnEncodeEnd}, "output": {"formats": [{"type": "svf", "views": ["2d", "3d"]}]}}
+        url4 = 'https://developer.api.autodesk.com/modelderivative/v2/designdata/job'
+        response = requests.post(url4, headers=header, data=json.dumps(mData4))
+        return response, response.status_code, urnEncodeEnd
+
+    
+    # 对原有html网页文件进行修改
+    def _change_html_file(self, tempToken, urnEncodeEnd):
+        dir_road = "./"
+        for root, dirs, files in os.walk(dir_road):
+            for file in files:
+                if file == 'hahahaha':
+                    with open(os.path.join(root, file), encoding='utf-8', mode='r+') as Html_file:
+                        htmlHandle = Html_file.read()
+                        assesTokenPatten = re.compile(r'var accessToken =.*')
+                        assesTokenReplace = "var accessToken = '" + tempToken[1] + "';"  # tempToken[1]是字符串，token
+                        htmlHandle = re.sub(assesTokenPatten, assesTokenReplace, htmlHandle)
+                        assesDocumentIdPatten = re.compile(r'var documentId =.*')
+                        assesDocumentIdReplace = "var documentId = 'urn:" + urnEncodeEnd + "';"  # urnEncodeEnd是最终值
+                        assesDocumentIdOut = re.sub(assesDocumentIdPatten, assesDocumentIdReplace,
+                                                    htmlHandle)  # 最终替换完成的str
+
+                    with open(os.path.join(root, file), encoding='utf-8', mode='w+') as newHtml:
+                        newHtml.write(assesDocumentIdOut)
+
+
 fileRead = 'access.txt'
 with open(fileRead, 'r') as load_file:
     tempFile = load_file.read()
