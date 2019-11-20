@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/stuff-list/font-awesome.min.css">
     <link rel="stylesheet" href="assets/stuff-list/jquery.orgchart.css">
     <link rel="stylesheet" href="assets/stuff-list/style.css">
-
+    <link rel="import" href="sidebar.html" id="siderbar"/>
 
     <style>
         @import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
@@ -125,61 +125,9 @@
 </head>
 
 <body>
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-        <div class="nano">
-            <div class="nano-content">
-                <div class="logo"><a href="index.html">
-                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>恒城科技</span></a></div>
-                <ul>
-                    <li class="label">菜单</li>
-                    <li>
-                        <a href="index.html"><i class="fa fa-home fa-fw"></i> 首页 
-                            <span class="sidebar-collapse-icon "></span></a>
-                    </li>
-                    <li class="label">功能</li>
-                    <li>
-                        <a href="forge-table.html"><i class="fa fa-desktop"></i> BIM总览
-                            <span class="sidebar-collapse-icon "></span></a>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> 施工数据 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="cost-control.html">成本管控</a></li>
-                            <li><a href="construction-progress.html">施工进度</a></li>
-                            <li><a href="material-tracking.html">物料追踪</a></li>
-                            <li><a href="quality-safety.html">质量安全</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="fa fa-file"></i> 项目资料 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="design-files.html">设计资料</a></li>
-                            <li><a href="construction-files.html">施工资料</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="fa fa-crosshairs"></i> 数字运维 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="digital-screen.html" target="_blank">数字大屏</a></li>
-                            <li><a href="video-monitor.html" target="_blank">视频监控</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="fa fa-cog"></i> 系统设置 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="stuff-list.html">组织结构</a></li>
-                            <li><a href="weekly-report.html">电子周报</a></li>
-                            <li><a href="index.html">退出</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <script type="text/javascript">
+        document.write(siderbar.import.body.innerHTML);
+    </script>
 
     <!-- /# sidebar -->
 
