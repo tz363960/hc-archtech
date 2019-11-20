@@ -18,8 +18,8 @@
                 //./natapp -authtoken=31f2d767501f4b83
                 //forever start start.js
                 //
-                "FORGE_CLIENT_ID": "oyMP7fHNIHXrGfdxnsSeJ9p7o1HlJz4m",
-                "FORGE_CLIENT_SECRET": "nA8YA1KcR5OjkDrG",
+                "FORGE_CLIENT_ID": "EAImUtWq2VNlA3VAA7ZBWYdJ2KLZksiU",
+                "FORGE_CLIENT_SECRET": "zzXT3Ix7dt76Bprd",
                 "FORGE_CALLBACK_URL": "http://localhost:5000/api/forge/callback/oauth"
             }
         }
