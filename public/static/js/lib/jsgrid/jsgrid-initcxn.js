@@ -131,11 +131,13 @@ var forgeTableHead = new Vue({
     },
     methods: {
         clearCookie: function () {
-            var date = new Date();
             alert('即将退出并返回桌面');
-            window.document.cookie = "ift" + "=" + '' + ";path=/;expires=" + date.toGMTString();
-            window.document.cookie = "username" + "=" + '' + ";path=/;expires=" + date.toGMTString();
-            window.document.cookie = "separateName" + "=" + '' + ";path=/;expires=" + date.toGMTString();
+            window.document.cookie = "UM_distinctid=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "CNZZDATA1278189368=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "i18next=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "ift" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "username" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "separateName" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
         }
     }
 })
