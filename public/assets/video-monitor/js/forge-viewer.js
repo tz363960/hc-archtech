@@ -1,10 +1,9 @@
 var viewer;
 //固定加载的模型，bucket宜采用persistent。注意：此处urn需和token对应。
-urn = "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6b3ltcDdmaG5paHhyZ2ZkeG5zc2VqOXA3bzFobGp6NG0teXQvWmVtZW4lMjAtMTAxNy5ud2M="
-// urn="dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6b3ltcDdmaG5paHhyZ2ZkeG5zc2VqOXA3bzFobGp6NG0teWFudGFpL1plbWVuJTIwLTEwMTcubndj"
+//urn = "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6b3ltcDdmaG5paHhyZ2ZkeG5zc2VqOXA3bzFobGp6NG0teXQvWmVtZW4lMjAtMTAxNy5ud2M="
 // @urn the model to show
 // @viewablesId which viewables to show, applies to BIM 360 Plans folder
-
+urn="dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZWFpbXV0d3Eydm5sYTN2YWE3emJ3eWRqMmtsemtzaXUtemVtZW4tYmFuay9aZW1lbiUyMC0lMjAlRTYlOTUlQjQlRTUlOTAlODglRTYlQTglQTElRTUlOUUlOEIlMjAwNzI2Lm53Yw"
 function launchViewer(urn) {
   var options = {
     env: 'AutodeskProduction',

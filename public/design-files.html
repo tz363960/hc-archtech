@@ -15,6 +15,7 @@
     <link href="/static/css/lib/helper.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap-table/1.15.3/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="import" href="sidebar.html" id="siderbar"/>
     <style>
         /* 设置表头不对齐 */
         .table_list_box {
@@ -25,93 +26,10 @@
 
 <body style="overflow: scroll;">
 
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-        <div class="nano">
-            <div class="nano-content">
-                <div class="logo"><a href="index.html">
-                        <!-- <img src="assets/images/logo.png" alt="" /> --><span>恒城科技</span></a></div>
-                <ul>
-                    <li class="label">菜单</li>
-                    <li>
-                        <a href="index.html"><i class="fa fa-home fa-fw"></i> 首页 </a>
-                    </li>
-                    <li class="label">功能</li>
-                    <li>
-                        <a href="forge-table.html"><i class="fa fa-desktop"></i> BIM总览
-                            <span class="sidebar-collapse-icon "></span></a>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> 施工数据 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="cost-control.html">成本管控</a></li>
-                            <li><a href="material-tracking.html">物料跟踪</a></li>
-                            <li><a href="construction-progress.html">施工进度</a></li>
-                            <li><a href="quality-control.html">质量控制</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="fa fa-file"></i> 项目资料 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="design-files.html">设计资料</a></li>
-                            <li><a href="construction-files.html">施工资料</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="fa fa-crosshairs"></i> 数字运维 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="digital-screen.html" target="_blank">数字大屏</a></li>
-                            <li><a href="video-monitor.html" target="_blank">视频监控</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="sidebar-sub-toggle"><i class="fa fa-cog"></i> 系统设置 <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="stuff-list.html">组织结构</a></li>
-                            <li><a href="weekly-report.html">电子周报</a></li>
-                            <li><a href="index.html">退出</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <script type="text/javascript">
+        document.write(siderbar.import.body.innerHTML);
+    </script>
     <!-- /# sidebar -->
-
-
-    <div class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="float-left" style="text-align:left">
-                        <div class="hamburger sidebar-toggle">
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!--<div class="float-right">-->
-                <div class="col-lg-4">
-                    <div class="float-right" style="text-align:right">
-                        <div class="dropdown dib">
-                            <div class="header-icon">
-                                <span class="user-avatar">
-                                    王大宝
-                                    <i class="fa fa-user-circle-o" style="font-size:24px"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- 传文件 -->
     <form id="uploadFile" method='post' enctype="multipart/form-data" style="height: 0px">
         <input id="hiddenUploadField" type="file" name="theFile" style="visibility:hidden" />
