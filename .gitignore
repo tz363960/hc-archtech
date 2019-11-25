@@ -1,2 +1,5 @@
-node_modules
-uploads
+node_modules/
+uploads/
+
+npm-debug.log
+package-lock.json
