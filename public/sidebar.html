@@ -14,8 +14,8 @@
                     <a class="sidebar-sub-toggle"><i class="ti-cloud"></i> 设计服务 <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="index.html">基本信息</a></li>
-                        <li><a href="design-frontpage.html">项目首页</a></li>
+                        <li><a href="design-general.html">基本信息</a></li>
+                        <li><a href="design-home.html">项目首页</a></li>
                         <li><a href="design-progress.html">进程概览</a></li>
                         <li><a href="design-files.html">资料管理</a></li>
                         <li><a href="design-dwgcompare.html">图纸对比</a></li>
@@ -105,3 +105,24 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+new Vue({
+    el: '#vueHeader',
+    data: {
+        userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1]))  // js截取两个字符串之间的内容
+    },
+    methods: {
+        clearCookie: function () {
+            alert('即将退出并返回桌面');
+            window.document.cookie = "UM_distinctid=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "CNZZDATA1278189368=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "i18next=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "ift" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "username" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+            window.document.cookie = "separateName" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
+        }
+    }
+})
+</script>
