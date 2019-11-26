@@ -1,259 +1,46 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>基本信息</title>
+    <!-- Styles -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="assets/css/lib/helper.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style_reports.css" rel="stylesheet">
 
-  <title>质量管理</title>
-
-  <!-- Common -->
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/static/css/lib/menubar/sidebar.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="/static/css/style.css" rel="stylesheet">
-  <link rel="import" href="sidebar.html" id="siderbar" />
-  <link rel="stylesheet" type="text/scss" href="/assets/scss/variables.scss">
+    <link rel="import" href="sidebar.html" id="siderbar"/>
 </head>
 
-
-
 <body>
-  <script type="text/javascript">
-    document.write(siderbar.import.body.innerHTML);
-  </script>
-  <div class="header">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="float-left" style="text-align:left">
-            <div class="hamburger sidebar-toggle">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </div>
-          </div>
-        </div>
+    <script type="text/javascript">
+        document.write(siderbar.import.body.innerHTML);
+    </script>
 
-        <!--<div class="float-right">-->
-        <div class="col-lg-4">
-          <div class="float-right" style="text-align:right">
-            <div class="dropdown dib">
-              <div class="header-icon">
-                <span class="user-avatar">
-                  秦正根
-                  <i class="fa fa-user-circle-o" style="font-size:24px"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="guide">
-      <section>
-        <h2>
-          <div class="content flex align-center center-space-around buttons" style="margin-bottom:0;"><span
-              class="number">1.</span><span class="text">项目概况</span>
-            <button class="button" style="align:right; margin-left:88%;"><i class="fa fa-edit"></i></button>
-          </div>
-        </h2>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">项目名称</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">建筑面积</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">耐火等级</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">建设单位</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">占地面积</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">人防等级</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">设计部门</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">建筑高度</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">防水等级</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>
-          <div class="content flex align-center center-space-around buttons" style="margin-bottom:0;"><span
-              class="number">2.</span><span class="text">结构专业概况</span>
-            <button class="button" style="align:right; margin-left:85%;"><i class="fa fa-edit"></i></button>
-          </div>
-        </h2>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">结构形式</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">抗震等级</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">设防烈度</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">基础形式</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">有关超限</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">场地类别</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group" style="margin-left: 0.7%;">
-          <div class="content flex align-center center-space-around buttons">
-            <label for="text5">抗渗等级</label>
-            <textarea class="form-control" id="text5" style="width: 27%; margin-left: 1.4%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>
-          <div class="content flex align-center center-space-around buttons" style="margin-bottom:0;"><span
-              class="number">3.</span><span class="text">电气专业概况</span>
-            <button class="button" style="align:right; margin-left:85%;"><i class="fa fa-edit"></i></button>
-          </div>
-        </h2>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">负荷等级</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">供电电源</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">防雷级别</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">照度标准</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">接地形式</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">配电方式</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group" style="margin-left: 0.7%;">
-          <div class="content flex align-center center-space-around buttons">
-            <label for="text5">弱电系统</label>
-            <textarea class="form-control" id="text5" style="width: 27.5%; margin-left: 1.0% ;margin-right: 1.0%;"
-              type="text" placeholder="" rows="1"></textarea>
-            <label for="text5">系统指标</label>
-            <textarea class="form-control" id="text5" style="width: 27.5%; margin-left: 1.5%;" type="text"
-              placeholder="" rows="1"></textarea>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>
-          <div class="content flex align-center center-space-around buttons" style="margin-bottom:0;"><span
-              class="number">4.</span><span class="text">暖通专业概况</span>
-            <button class="button" style="align:right; margin-left:85%;"><i class="fa fa-edit"></i></button>
-          </div>
-        </h2>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">供冷冷源</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">供热热源</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">空调面积</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group" style="margin-left: 0.7%;">
-          <div class="content flex align-center center-space-around buttons">
-            <label for="text5">制冷负荷</label>
-            <textarea class="form-control" id="text5" style="width: 27.5%; margin-left: 1.0% ;margin-right: 1.0%;"
-              type="text" placeholder="" rows="1"></textarea>
-            <label for="text5">通风系统</label>
-            <textarea class="form-control" id="text5" style="width: 27.5%; margin-left: 1.5%;" type="text"
-              placeholder="" rows="1"></textarea>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>
-          <div class="content flex align-center center-space-around buttons" style="margin-bottom:0;"><span
-              class="number">5.</span><span class="text">给排水专业概况</span>
-            <button class="button" style="align:right; margin-left:83%;"><i class="fa fa-edit"></i></button>
-          </div>
-        </h2>
-        <div class="form-group">
-          <div class="content flex align-center justify-space-around buttons">
-            <label for="text5">给水方式</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">市政水压</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-            <label for="text5">给水系统</label>
-            <textarea class="form-control" id="text5" style="width: 27%;" type="text" placeholder=""
-              rows="1"></textarea>
-          </div>
-        </div>
-        <div class="form-group" style="margin-left: 0.7%;">
-          <div class="content flex align-center center-space-around buttons">
-            <label for="text5">排水系统</label>
-            <textarea class="form-control" id="text5" style="width: 27.5%; margin-left: 1.0% ;margin-right: 1.0%;"
-              type="text" placeholder="" rows="1"></textarea>
-            <label for="text5">消防系统</label>
-            <textarea class="form-control" id="text5" style="width: 27.5%; margin-left: 1.5%;" type="text"
-              placeholder="" rows="1"></textarea>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="/static/js/lib/jquery.min.js"></script>
-  <script src="/static/js/lib/jquery.nanoscroller.min.js"></script>
-  <script src="/static/js/lib/menubar/sidebar.js"></script>
+<div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+</div>
+
+    <!-- jquery vendor -->
+    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <!-- nano scroller -->
+    <script src="assets/js/lib/menubar/sidebar.js"></script>
+    <script src="assets/js/lib/preloader/pace.min.js"></script>
+    <!-- sidebar -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 
