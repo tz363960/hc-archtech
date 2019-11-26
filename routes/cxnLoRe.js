@@ -146,6 +146,7 @@ app.post('/Account/Hclogin', function (req, res) {
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     }
+    // res.clearCookie('ift','username','separateName');
 
     var datetime = (new Date()).Format("yyyy-MM-dd hh:mm:ss");
 

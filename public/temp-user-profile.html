@@ -59,7 +59,8 @@
                 </tr>
                 <tr>
                   <td>到期时间:</td>
-                  <td><input type="text" class="form-control" name="dueDate" v-model="isdueDate"></td>
+                  <!-- autocomplete="off"不显示保存记录 -->
+                  <td><input autocomplete="off" type="text" class="form-control" name="dueDate" id="dueDate" v-model="isdueDate"></td>
                   <td style="color:red">{{dueDateShow}}</td>
                 </tr>
                 <tr>
@@ -86,7 +87,7 @@
                   <td>
                     创建时间:
                   </td>
-                  <td><input type="text" class="form-control" name="dataCreate" v-model="isdataCreate"></td>
+                  <td><input autocomplete="off" type="text" class="form-control" name="dataCreate" id="date_create" v-model="isdataCreate"></td>
                   <td style="color:red">{{dataCreateShow}}</td>
                 </tr>
                 <tr>
