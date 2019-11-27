@@ -76,6 +76,7 @@ app.post('/Account/Hcregister', function (req, res) {
                 state: ''
             };
             if (err) {
+                console.log(err);
                 res.send('网络存在问题');
             } else {
                 var toDoJson = data;
