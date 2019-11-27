@@ -6,7 +6,7 @@
     <!-- <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>电子周报</title>
+    <title>设计文件</title>
     <!-- Styles -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -117,7 +117,7 @@
     <script src="assets/js/prefixfree.min.js"></script> <!-- *前缀补全* -->
     <script src="assets/js/lib/jquery-pdf/pdfobject.js"></script>
     <script src="assets/js/PDFTree.js"></script>
-    <link rel="import" href="sidebar.html" id="siderbar"/>
+    <link rel="import" href="sidebar.html" id="siderbar" />
 </head>
 
 <body>
@@ -130,28 +130,31 @@
             <div class="container-fluid">
                 <div id="main-content">
                     <main>
-                            <div class="col-sm-4 fill">
-                                <div class="panel panel-default fill">
-                                    <div class="panel-heading" data-toggle="tooltip">
-                                        文件夹 &amp; 周报
-                                        <span id="refreshPdf" class="glyphicon glyphicon-refresh"
-                                            style="cursor: pointer;padding-left:40px;"></span>刷新
+                        <div class="col-sm-4 fill">
+                            <div class="panel panel-default fill">
+                                <div class="panel-heading" data-toggle="tooltip">
+                                    设计文件
+                                    <span id="refreshPdf" class="glyphicon glyphicon-refresh"
+                                        style="cursor: pointer;padding-left:40px;"></span>刷新
 
-                                        <span id="restorePdf" class="glyphicon glyphicon-home"
-                                            style="cursor: pointer;padding-left:40px;"></span>一键恢复
-                                        <button class="btn btn-xs btn-info" style="float: right"
-                                            id="showFormCreateBucket" data-toggle="modal"
-                                            data-target="#createPDFFolder">
-                                            <span class="glyphicon glyphicon-folder-close"></span> 创建文件夹
-                                        </button>
-                                    </div>
-                                    <div id="pdfBuckets"></div>
+                                    <span id="restorePdf" class="glyphicon glyphicon-home"
+                                        style="cursor: pointer;padding-left:40px;"></span>一键恢复
+                                    <button class="btn btn-xs btn-info" style="float: right" id="showFormCreateBucket"
+                                        data-toggle="modal" data-target="#createPDFFolder">
+                                        <span class="glyphicon glyphicon-folder-close"></span> 创建文件夹
+                                    </button>
                                 </div>
+                                <div id="pdfBuckets"></div>
                             </div>
-                            <div class="col-lg-8">
-                                <div id="pdfViewer"></div>
-                            </div>
-              
+                        </div>
+                        <div class="col-lg-8">
+                                <button class="btn btn-xs btn-info" style="float: right" id="yellowpage"
+                                data-toggle="modal" data-target="#createPDFFolder">
+                                <span class="glyphicon glyphicon glyphicon-user"></span> 通讯录
+                            </button>
+                            <div id="pdfViewer"></div>
+                        </div>
+
                         <form id="uploadFile" method='post' enctype="multipart/form-data" style="height: 0px">
                             <input id="hiddenUploadField" type="file" name="theFile" style="visibility:hidden" />
                         </form>
