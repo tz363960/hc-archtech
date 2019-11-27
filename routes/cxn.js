@@ -192,6 +192,23 @@ app.get('/forge-table/changeInformationUpload', function (req, res) {
 });
 
 
+// app.get('/testDataBase', function (req, res) {
+//     var sqlconnection = mysql.createConnection(config.sqlconnection);
+//     sqlconnection.connect();
+
+//     var addsql = 'insert into uidpswd(userName,phones,name,password) values(?,?,?,?)';
+//     var addsqlparam = [req.query.Full_Name, req.query.Email, req.query.Subject, req.query.Message];
+//     sqlconnection.query(addsql, addsqlparam, function (err, result) {
+//         if (err) {
+//             res.send('[INSERT ERROR] - ' + err);
+//             return;
+//         }
+//     });
+
+//     sqlconnection.end();
+// });
+
+
 function translateJSONtoMysql(jsonFileName) {   // 把json文件转换到数据库
     // SELECT table_name FROM information_schema.TABLES WHERE table_name ='表名';   判断一个表是否存在
     const fs = require('fs');
