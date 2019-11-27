@@ -60,7 +60,7 @@
                 <tr>
                   <td>到期时间:</td>
                   <!-- autocomplete="off"不显示保存记录 -->
-                  <td><input autocomplete="off" type="text" class="form-control" name="dueDate" id="dueDate" v-model="isdueDate"></td>
+                  <td><input autocomplete="off" type="text" class="form-control" name="dueDate" id="due_Date" v-model="isdueDate"></td>
                   <td style="color:red">{{dueDateShow}}</td>
                 </tr>
                 <tr>
@@ -165,7 +165,7 @@
           minTime: '8:00'
         });
     };
-    $('#dueDate').datetimepicker({
+    $('#due_Date').datetimepicker({
       onChangeDateTime: logic,
       onShow: logic
     });
@@ -187,10 +187,10 @@
       userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1])),
       issueTalkShow: '请填写该项',
       IsissueTalk: '',
-      dueDateShow: '请填写该项',
+      dueDateShow: '请填写到期时间',
       isdueDate: '',
       isdataCreate: '',
-      dataCreateShow: '请填写该项',
+      dataCreateShow: '请填写创建时间',
       creatorManShow: '请填写该项',
       iscreatorMan: '',
       assignToWhoShow: '请填写该项',
@@ -204,10 +204,10 @@
         this.issueTalkShow = IsissueTalk ? '' : '请填写该项';
       },
       isdueDate: function (isdueDate) {
-        this.dueDateShow = isdueDate ? '' : '请填写该项';
+        this.dueDateShow = isdueDate ? '' : '请填写到期时间';
       },
       isdataCreate: function (isdataCreate) {
-        this.dataCreateShow = isdataCreate ? '' : '请填写该项';
+        this.dataCreateShow = isdataCreate ? '' : '请填写创建时间';
       },
       iscreatorMan: function (iscreatorMan) {
         this.creatorManShow = iscreatorMan ? '' : '请填写该项';
