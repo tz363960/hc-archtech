@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>设计文件</title>
+    <!-- Styles -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="assets/css/lib/helper.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style_reports.css" rel="stylesheet">
+    <style>
+        @import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+
+        p {
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        section {
+            display: none;
+            padding: 0px 0 0;
+            border-top: 1px solid #ddd;
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #bbb;
+            /* border: 1px solid transparent; */
+        }
+
+        label:before {
+            font-family: fontawesome;
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        label[for*='1']:before {
+            content: '\f1cb';
+        }
+
+        label[for*='2']:before {
+            content: '\f17d';
+        }
+
+        label[for*='3']:before {
+            content: '\f16b';
+        }
+
+        label[for*='4']:before {
+            content: '\f1a9';
+        }
+
+        label:hover {
+            color: #888;
+            cursor: pointer;
+        }
+
+        input:checked+label {
+            color: #555;
+            border: 1px solid #ddd;
+            border-top: 2px solid orange;
+            border-bottom: 1px solid #fff;
+        }
+
+
+        @media screen and (max-width: 1000px) {
+            label {
+                font-size: 0;
+            }
+
+            label:before {
+                margin: 0;
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            label {
+                padding: 15px;
+            }
+        }
+
+        .pdfobject-container {
+            height: 1000px;
+            border: 1rem soild reba(0, 0, 0, .1);
+        }
+    </style>
+    <script src="assets/js/prefixfree.min.js"></script> <!-- *前缀补全* -->
+    <script src="assets/js/lib/jquery-pdf/pdfobject.js"></script>
+    <script src="assets/js/PDFTree.js"></script>
+    <link rel="import" href="sidebar.html" id="siderbar" />
+</head>
+
+<body>
+    <script type="text/javascript">
+        document.write(siderbar.import.body.innerHTML);
+    </script>
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div id="main-content">
+                    <main>
+                        <div class="col-sm-4 fill">
+                            <div class="panel panel-default fill">
+                                <div class="panel-heading" data-toggle="tooltip">
+                                    设计文件
+                                    <span id="refreshPdf" class="glyphicon glyphicon-refresh"
+                                        style="cursor: pointer;padding-left:40px;"></span>刷新
+
+                                    <span id="restorePdf" class="glyphicon glyphicon-home"
+                                        style="cursor: pointer;padding-left:40px;"></span>一键恢复
+                                    <button class="btn btn-xs btn-info" style="float: right" id="showFormCreateBucket"
+                                        data-toggle="modal" data-target="#createPDFFolder">
+                                        <span class="glyphicon glyphicon-folder-close"></span> 创建文件夹
+                                    </button>
+                                </div>
+                                <div id="pdfBuckets"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                                <button class="btn btn-xs btn-info" style="float: right" id="yellowpage"
+                                data-toggle="modal" data-target="#createPDFFolder">
+                                <span class="glyphicon glyphicon glyphicon-user"></span> 通讯录
+                            </button>
+                            <div id="pdfViewer"></div>
+                        </div>
+
+                        <form id="uploadFile" method='post' enctype="multipart/form-data" style="height: 0px">
+                            <input id="hiddenUploadField" type="file" name="theFile" style="visibility:hidden" />
+                        </form>
+
+                        <!-- 创建bucketkey的框 -->
+                        <div class="modal fade" id="createBucketModal" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">Create new bucket</h4>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary" id="createNewBucket">Go ahead,
+                                            create the
+                                            bucket</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery vendor -->
+    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <!-- nano scroller -->
+    <script src="assets/js/lib/menubar/sidebar.js"></script>
+    <script src="assets/js/lib/preloader/pace.min.js"></script>
+    <!-- sidebar -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>
