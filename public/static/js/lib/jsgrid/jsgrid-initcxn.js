@@ -124,20 +124,4 @@ $(function () {      //$(function(){})表示等页面加载完毕后发生此函
 });
 
 //
-var forgeTableHead = new Vue({
-    el: '#vueHeader',
-    data: {
-        userChineseName: decodeURI(decodeURI(document.cookie.match(/username=(\S*);/)[1]))  // js截取两个字符串之间的内容
-    },
-    methods: {
-        clearCookie: function () {
-            alert('即将退出并返回桌面');
-            window.document.cookie = "UM_distinctid=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
-            window.document.cookie = "CNZZDATA1278189368=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
-            window.document.cookie = "i18next=" + " ;path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
-            window.document.cookie = "ift" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
-            window.document.cookie = "username" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
-            window.document.cookie = "separateName" + "=" + '' + ";path=/;expires=" + "Thu, 01 Jan 1970 00:00:01 GMT;";
-        }
-    }
-})
+
