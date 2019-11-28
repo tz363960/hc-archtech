@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>基本信息</title>
   <!-- Styles -->
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
   <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
   <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
   <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
-  <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css" /> -->
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/lib/helper.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/style_reports.css" rel="stylesheet">
@@ -33,30 +33,38 @@
     <div class="main" id="basic_information">
       <div id="container-fluid">
         <div class="btn-group pull-right" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">保存</button>
-          <button type="button" class="btn btn-default">打印</button>
-          <button type="button" class="btn btn-default">进入项目</button>
+          <button type="button" class="btn btn-success">保存</button>
+          <button type="button" class="btn btn-success">打印</button>
+          <button type="button" class="btn btn-success">进入项目</button>
         </div>
         <h3> &nbsp; &nbsp; &nbsp; 1. 项目概况 <span class="label label-default"></span></h3>
         <div class="row fill">
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">项目名称</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">建筑面积</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
+          <div class="col-md-4 col-lg-4">
+
 
               <div class="input-group">
                 <div class="input-group-btn">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">项目名称 </button>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control is-valid"><p></p>
+              </div>
+
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <div class="input-group">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">建筑面积 </button>
+              </div><!-- /btn-group -->
+              <input type="text" class="form-control is-valid"><p></p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4">
+
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">防火等级 </button>
                   <ul class="dropdown-menu" >
                     <li><a v-on:click="fhdj='一级'">一级</a></li>
@@ -67,80 +75,88 @@
                 </div><!-- /btn-group -->
                 <input type="text" class="form-control is-valid" :value="fhdj"><p></p>
               </div>
+
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <div class="input-group">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">建设单位 </button>
+              </div><!-- /btn-group -->
+              <input type="text" class="form-control is-valid"><p></p>
             </div>
           </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">建设单位</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
+          <div class="col-md-4 col-lg-4">
+            <div class="input-group">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">占地面积 </button>
+              </div><!-- /btn-group -->
+              <input type="text" class="form-control is-valid"><p></p>
             </div>
           </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">占地面积</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
+          <div class="col-md-4 col-lg-4">
+
+            <div class="input-group">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">人防等级 </button>
+                <ul class="dropdown-menu" >
+                  <li><a v-on:click="fhdj='一级'">一级</a></li>
+                  <li><a v-on:click="fhdj='二级'">二级</a></li>
+                  <li><a v-on:click="fhdj='三级'">三级</a></li>
+                  <li><a v-on:click="fhdj='四级'">四级</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+              <input type="text" class="form-control is-valid" :value="fhdj"><p></p>
             </div>
+
           </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">人防等级</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:560%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="col-md-4 col-lg-4">
+              <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">设计部门 </button>
+                  </div><!-- /btn-group -->
+                  <input type="text" class="form-control is-valid"><p></p>
+                </div>
           </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">设计部门</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
+          <div class="col-md-4 col-lg-4">
+              <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">建筑高度 </button>
+                  </div><!-- /btn-group -->
+                  <input type="text" class="form-control is-valid"><p></p>
+                </div>
           </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">建筑高度</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
+          <div class="col-md-4 col-lg-4">
+
+            <div class="input-group">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">防水等级 </button>
+                <ul class="dropdown-menu" >
+                  <li><a v-on:click="fhdj='一级'">一级</a></li>
+                  <li><a v-on:click="fhdj='二级'">二级</a></li>
+                  <li><a v-on:click="fhdj='三级'">三级</a></li>
+                  <li><a v-on:click="fhdj='四级'">四级</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+              <input type="text" class="form-control is-valid" :value="fhdj"><p></p>
             </div>
-          </div>
-          <div class="col-lg-4 fill">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">防水等级</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:560%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+
           </div>
         </div>
         <h3> &nbsp; &nbsp; &nbsp; 2. 结构专业概况 <span class="label label-default"></span></h3>
         <div class="row fill">
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">结构形式</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">抗震等级</span>
               <table class="issue-detail" aria-describedby="sizing-addon1">
@@ -159,7 +175,7 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">设防烈度</span>
               <table class="issue-detail" aria-describedby="sizing-addon1">
@@ -178,19 +194,19 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">基础形式</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">有关超限</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">场地类别</span>
               <table class="issue-detail" aria-describedby="sizing-addon1">
@@ -209,7 +225,7 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">抗渗等级</span>
               <table class="issue-detail" aria-describedby="sizing-addon1">
@@ -231,7 +247,7 @@
         </div>
         <h3> &nbsp; &nbsp; &nbsp; 3. 电气专业概况 <span class="label label-default"></span></h3>
         <div class="row fill">
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">负荷等级</span>
               <table class="issue-detail" aria-describedby="sizing-addon1">
@@ -250,13 +266,13 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">供电电源</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">防雷级别</span>
               <table class="issue-detail" aria-describedby="sizing-addon1">
@@ -275,19 +291,19 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">照度标准</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">接地形式</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">配电方式</span>
               <table class="issue-detail" aria-describedby="sizing-addon1">
@@ -306,13 +322,13 @@
               </table>
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">弱电系统</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">系统指标</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
@@ -321,31 +337,31 @@
         </div>
         <h3> &nbsp; &nbsp; &nbsp; 4. 暖通专业概况 <span class="label label-default"></span></h3>
         <div class="row fill">
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">供冷冷源</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">供热热源</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">空调面积</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">制冷负荷</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">通风系统</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
@@ -355,31 +371,31 @@
 
         <h3> &nbsp; &nbsp; &nbsp; 5. 给排水专业概况 <span class="label label-default"></span></h3>
         <div class="row fill">
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">给水方式</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">市政水压</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">给水系统</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">排水系统</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
             </div>
           </div>
-          <div class="col-lg-4 fill">
+          <div class="col-md-4 col-lg-4">
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">消防系统</span>
               <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
@@ -395,7 +411,7 @@
   <script src="assets/js/lib/menubar/sidebar.js"></script>
   <script src="assets/js/lib/preloader/pace.min.js"></script>
   <!-- sidebar -->
-  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="assets/js/scripts.js"></script>
 
   <script>
