@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>项目首页</title>
+    <link rel="shortcut icon" href="static/images/v2.ico">
+
+    <!-- Styles -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="static/css/lib/jsgrid/jsgrid-theme.min.css" rel="stylesheet" />
+    <link href="static/css/lib/jsgrid/jsgrid.min.css" type="text/css" rel="stylesheet" />
+    <link href="static/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="static/css/lib/helper.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/floatStyle.css" rel="stylesheet">
+
+    <!-- jquery vendor -->
+    <script src="static/js/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="static/js/lib/jquery.nanoscroller.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+    <link href="https://cdn.bootcss.com/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+
+</head>
+<sty
+<body style="overflow:auto;overflow-x: hidden">
+    <!-- /# mycode -->
+    <script src="static/js/forgeControl/viewer.js"></script>
+    <script src="static/js/forgeControl/ForgeTree.js"></script>
+    <!-- <script src="static/js/extensions/pointcloud.js"></script> -->
+    <script src="static/js/extensions/CustomPropertyPanel.js"></script>
+    <script src="static/js/extensions/issues.js"></script>
+    <script src="static/js/extensions/heatmap.js"></script>
+    <script src="static/js/extensions/drawing.js"></script>
+    <script src="static/js/extensions/FloorExplodeExtension.js"></script>
+    <script src="static/js/extensions/multiviewer.js"></script>
+    <link rel="import" href="sidebar.html" id="siderbar" />
+    <!-- /# sidebar -->
+    <script type="text/javascript">
+        document.write(siderbar.import.body.innerHTML);
+    </script>
+
+    <div class="content-wrap">
+        <div class="main">
+            <div id="container-fluid">
+                <section id="main-content">
+                    <div class="d-flex justify-content-center">
+                        <h3>
+                            <ul class="nav nav-pills ">
+                                <li role="presentation"><a href="javascript:void(0)">首页</a></li>
+                                <li role="presentation"><a href="javascript:void(0)">方案设计</a></li>
+                                <li role="presentation" class="disabled"><a href="javascript:void(0)">初步设计</a></li>
+                                <li role="presentation" class="disabled"><a href="javascript:void(0)">扩初设计</a></li>
+                                <li role="presentation" class="disabled"><a href="javascript:void(0)">施工图设计</a></li>
+                                <li role="presentation" class="disabled"><a href="javascript:void(0)">设计完成</a></li>
+                                <li role="presentation" class="disabled"><a href="javascript:void(0)">设计变更</a></li>
+                                <li role="presentation" class="disabled"><a href="javascript:void(0)">项目完成</a></li>
+                            </ul>
+                        </h3>
+                    </div>
+
+
+                    <div>
+                        <h4>
+                            <p class="text-justify text-dark">当前阶段：
+                                <a href="#" class="text-decoration-none text-primary">方案设计1（点击进入）</a></p>
+                        </h4>
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-9 fill">
+                            <div class="card">
+                                <img src="http://lorempixel.com/350/150/city/" class="card-img" alt="..."
+                                    style="max-width:100%;height:500px">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 fill">
+                            <div class="card">
+                                <div class="form-group">
+                                    <select class="form-control text-dark" id="exampleFormControlSelect1">
+                                        <option selected></option>
+                                        <option value="1">全部动态</option>
+                                        <option value="2">建筑设计动态</option>
+                                        <option value="3">结构设计动态</option>
+                                        <option value="4">机电设计动态</option>
+                                        <option value="5">暖通设计动态</option>
+                                    </select>
+                                </div>
+
+                                <table class="table table-bordered" style="height:405px">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">最新动态</th>
+                                            <th scope="col">创建时间</th>
+                                            <th scope="col">创建者</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-primary btn-lg dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> 通讯录
+                                </button>
+                                <div class="dropdown-menu" style="width:265%;">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" style=" overflow:scroll;height:430px">
+                                        <table class="table  table-bordered">
+                                            <tbody>
+                                                <tr class="active">
+                                                    <td>业主</td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr class="active">
+                                                    <td>项目总</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr class="active">
+                                                    <td>建筑设计师</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr class="active">
+                                                    <td>结构工程师</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr class="active">
+                                                    <td>机电工程师</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>xxxxx</td>
+                                                    <td>123456789</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- nano scroller -->
+    <script src="static/js/lib/menubar/sidebar.js"></script>
+    <script src="static/js/lib/preloader/pace.min.js"></script>
+
+    <!-- JS Grid Scripts End-->
+    <script src="static/js/scripts.js"></script>
+
+</body>
+
+</html>
