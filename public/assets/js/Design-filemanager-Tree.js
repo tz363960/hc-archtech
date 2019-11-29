@@ -33,7 +33,7 @@ function preparePDFBucketTree() {
                 "icons": true
             },
             'data': {
-                "url": '/weekly-report/tree',
+                "url": '/design-filemanager/tree',
                 "dataType": "json",
                 "data": function (node) {
                     console.log(node);
@@ -125,7 +125,7 @@ function uploadFile() {
     //不论node为file还是folder，把自身id和children的id传出去，删除文件或整个文件夹
     var FileID = node.children.concat(node.id);
     $.post({
-        url: "/weekly-report/tree/deletefile",
+        url: "/design-filemanager/tree/deletefile",
         contentType: "application/json",
         data: JSON.stringify({
             "FileID": FileID
@@ -148,7 +148,7 @@ function DeleteFile(node) {
     //不论node为file还是folder，把自身id和children的id传出去，删除文件或整个文件夹
     var FileID = node.children.concat(node.id);
     $.post({
-        url: "/weekly-report/tree/deletefile",
+        url: "/design-filemanager/tree/deletefile",
         contentType: "application/json",
         data: JSON.stringify({
             "FileID": FileID
@@ -167,7 +167,7 @@ function originalPdf(node) {
     //逻辑判断，返回bool值
     var IsRestore = true;
     $.post({
-        url: "/weekly-report/tree/restorefile",
+        url: "/design-filemanager/tree/restorefile",
         contentType: "application/json",
         data: JSON.stringify({
             "IsRestore": IsRestore
