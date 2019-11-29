@@ -1912,22 +1912,7 @@ footer p {
 .form-group {
   margin-bottom: 20px;
 }
-.form-control {
-  height: 42px;
-  border-radius: 0px;
-  box-shadow: none;
-  border-color: #e7e7e7;
-  font-family: 'Roboto', sans-serif;
-}
-.form-control:hover {
-  box-shadow: none;
-  border-color: #e7e7e7;
-}
-.form-control:focus,
-.form-control.active {
-  box-shadow: none;
-  border-color: #878787;
-}
+
 .input-default {
   border-radius: 4px;
 }
@@ -1945,41 +1930,7 @@ footer p {
 }
 /*    Search Box Input Button
 --------------------------------*/
-.input-group-btn .btn {
-  padding: 10px 12px;
-}
-.input-group-default .form-control {
-  border-radius: 4px;
-}
-.input-group-flat .form-control {
-  border-radius: 4px;
-}
-.input-group-flat .btn {
-  border-radius: 0px;
-}
-.input-group-rounded .form-control {
-  border-radius: 100px;
-}
-.input-group-rounded .btn-group-left {
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-}
-.input-group-rounded .btn-group-right {
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
-}
-.input-group-close-icon {
-  background: none;
-  color: #252525;
-  border-color: #e7e7e7;
-}
-.input-group-close-icon:hover,
-.input-group-close-icon:focus,
-.input-group-close-icon.active {
-  background: none;
-  border-color: #e7e7e7;
-  color: #252525;
-}
+
 /*    Input States
 -----------------------*/
 .has-default .form-control:hover,
