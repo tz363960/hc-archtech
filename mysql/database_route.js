@@ -160,4 +160,77 @@ router.post('/weekly-report/tree/restorefile', (req) => {
     });
 })
 
+router.post('/design-filemanager/tree/deletefile', (req) => {
+    var idDelele = req.body.FileID.toString();
+    console.log(idDelele);
+    var mysql = 'update design-filemanager set DeleteOrNot = 0 where id in(' + idDelele + ');';
+    connection.query(mysql, function (error, results) {
+        //查询错误，返回错误信息
+        if (error) {
+            results = {
+                "status": "500",
+                "message": "服务器错误"
+            }
+        } else {
+            results = {
+                "status": "200",
+                "message": "Success",
+            }
+            // console.log(Object.prototype.toString.call(results.data));
+            console.log(results);
+        }
+    });
+})
+
+router.post('/design-filemanager/tree/restorefile', (req) => {
+    var isRestore = req.body.IsRestore.toString();
+    console.log(isRestore);
+    if (isRestore == "true") {
+        var mysql = 'update design-filemanager set DeleteOrNot = 1;';
+    }
+
+    connection.query(mysql, function (error, results) {
+        //查询错误，返回错误信息
+        if (error) {
+            results = {
+                "status": "500",
+                "message": "服务器错误"
+            }
+        } else {
+            results = {
+                "status": "200",
+                "message": "Success",
+            }
+            // console.log(Object.prototype.toString.call(results.data));
+            console.log(results);
+        }
+    });
+})
+
+router.post('/design-filemanager/tree/restorefile', (req) => {
+    var isRestore = req.body.IsRestore.toString();
+    console.log(isRestore);
+    if (isRestore == "true") {
+        var mysql = 'update design-filemanager set DeleteOrNot = 1;';
+    }
+
+    connection.query(mysql, function (error, results) {
+        //查询错误，返回错误信息
+        if (error) {
+            results = {
+                "status": "500",
+                "message": "服务器错误"
+            }
+        } else {
+            results = {
+                "status": "200",
+                "message": "Success",
+            }
+            // console.log(Object.prototype.toString.call(results.data));
+            console.log(results);
+        }
+    });
+})
+
+
 module.exports = router;
