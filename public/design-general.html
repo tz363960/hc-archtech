@@ -25,384 +25,467 @@
 <style>
 
 </style>
+<script type="text/javascript">
+  document.write(siderbar.import.body.innerHTML);
+</script>
+
 <body>
-  <script type="text/javascript">
-    document.write(siderbar.import.body.innerHTML);
-  </script>
+
   <div class="content-wrap">
-    <div class="main" id="basic_information">
-      <div id="container-fluid">
-        <div class="btn-group pull-right" role="group" aria-label="...">
-          <button type="button" class="btn btn-success">保存</button>
-          <button type="button" class="btn btn-success">打印</button>
-          <button type="button" class="btn btn-success">进入项目</button>
-        </div>
-        <h3> &nbsp; &nbsp; &nbsp; 1. 项目概况 <span class="label label-default"></span></h3>
-        <div class="row fill">
-          <div class="col-md-4 col-lg-4">
+    <div class="main card" id="basic_information">
 
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <button type="button" class="btn btn-primary">保存</button>
+        <button type="button" class="btn btn-primary">打印</button>
+        <button type="button" class="btn btn-primary">进入项目</button>
+      </div>
 
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">项目名称 </button>
-                </div><!-- /btn-group -->
-                <input type="text" class="form-control is-valid"><p></p>
-              </div>
-
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">建筑面积 </button>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control is-valid"><p></p>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">防火等级 </button>
-                  <ul class="dropdown-menu" >
-                    <li><a v-on:click="fhdj='一级'">一级</a></li>
-                    <li><a v-on:click="fhdj='二级'">二级</a></li>
-                    <li><a v-on:click="fhdj='三级'">三级</a></li>
-                    <li><a v-on:click="fhdj='四级'">四级</a></li>
-                  </ul>
-                </div><!-- /btn-group -->
-                <input type="text" class="form-control is-valid" :value="fhdj"><p></p>
-              </div>
-
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">建设单位 </button>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control is-valid"><p></p>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">占地面积 </button>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control is-valid"><p></p>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">人防等级 </button>
-                <ul class="dropdown-menu" >
-                  <li><a v-on:click="fhdj='一级'">一级</a></li>
-                  <li><a v-on:click="fhdj='二级'">二级</a></li>
-                  <li><a v-on:click="fhdj='三级'">三级</a></li>
-                  <li><a v-on:click="fhdj='四级'">四级</a></li>
-                </ul>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control is-valid" :value="fhdj"><p></p>
-            </div>
-
-          </div>
-          <div class="col-md-4 col-lg-4">
-              <div class="input-group">
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">设计部门 </button>
-                  </div><!-- /btn-group -->
-                  <input type="text" class="form-control is-valid"><p></p>
-                </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-              <div class="input-group">
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">建筑高度 </button>
-                  </div><!-- /btn-group -->
-                  <input type="text" class="form-control is-valid"><p></p>
-                </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">防水等级 </button>
-                <ul class="dropdown-menu" >
-                  <li><a v-on:click="fhdj='一级'">一级</a></li>
-                  <li><a v-on:click="fhdj='二级'">二级</a></li>
-                  <li><a v-on:click="fhdj='三级'">三级</a></li>
-                  <li><a v-on:click="fhdj='四级'">四级</a></li>
-                </ul>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control is-valid" :value="fhdj"><p></p>
-            </div>
-
-          </div>
-        </div>
-        <h3> &nbsp; &nbsp; &nbsp; 2. 结构专业概况 <span class="label label-default"></span></h3>
-        <div class="row fill">
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">结构形式</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">抗震等级</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:566%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">设防烈度</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:560%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">基础形式</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">有关超限</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">场地类别</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:560%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">抗渗等级</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:566%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <h3> &nbsp; &nbsp; &nbsp; 3. 电气专业概况 <span class="label label-default"></span></h3>
-        <div class="row fill">
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">负荷等级</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:566%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">供电电源</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">防雷级别</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:560%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">照度标准</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">接地形式</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">配电方式</span>
-              <table class="issue-detail" aria-describedby="sizing-addon1">
-                <tbody>
-                  <tr>
-                    <td>
-                      <select class="form-control" name="issueStatus" style="width:560%; height:45px">
-                        <option value="">一级</option>
-                        <option value="">二级</option>
-                        <option value="">三级</option>
-                        <option value="">四级</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">弱电系统</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">系统指标</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-        </div>
-        <h3> &nbsp; &nbsp; &nbsp; 4. 暖通专业概况 <span class="label label-default"></span></h3>
-        <div class="row fill">
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">供冷冷源</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">供热热源</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">空调面积</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">制冷负荷</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">通风系统</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
+      <h3> &nbsp 1. 项目概况</h3>
+      <div class="row fill">
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">项目名称 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
           </div>
         </div>
 
-        <h3> &nbsp; &nbsp; &nbsp; 5. 给排水专业概况 <span class="label label-default"></span></h3>
-        <div class="row fill">
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">给水方式</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">建筑面积 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
           </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">市政水压</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">防火等级<span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="fhdj='一级'">一级</a></li>
+                <li><a v-on:click="fhdj='二级'">二级</a></li>
+                <li><a v-on:click="fhdj='三级'">三级</a></li>
+                <li><a v-on:click="fhdj='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="fhdj">
+            <p></p>
           </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">给水系统</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
+
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">建设单位 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
           </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">排水系统</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">占地面积 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
           </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">消防系统</span>
-              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
-            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">人防等级 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="rfdj='一级'">一级</a></li>
+                <li><a v-on:click="rfdj='二级'">二级</a></li>
+                <li><a v-on:click="rfdj='三级'">三级</a></li>
+                <li><a v-on:click="rfdj='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="rfdj">
+            <p></p>
+          </div>
+
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">设计部门 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">建筑高度 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">防水等级 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="fsdj='一级'">一级</a></li>
+                <li><a v-on:click="fsdj='二级'">二级</a></li>
+                <li><a v-on:click="fsdj='三级'">三级</a></li>
+                <li><a v-on:click="fsdj='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="fsdj">
+            <p></p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <h3> &nbsp 2. 结构专业概况 </h3>
+      <div class="row fill">
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">结构形式</button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">抗震等级 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="kzdj='一级'">一级</a></li>
+                <li><a v-on:click="kzdj='二级'">二级</a></li>
+                <li><a v-on:click="kzdj='三级'">三级</a></li>
+                <li><a v-on:click="kzdj='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="kzdj">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">设防烈度 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="sfld='一级'">一级</a></li>
+                <li><a v-on:click="sfld='二级'">二级</a></li>
+                <li><a v-on:click="sfld='三级'">三级</a></li>
+                <li><a v-on:click="sfld='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="sfld">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">基础形式 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">有关超限</button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">场地类别 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="cdlb='一级'">一级</a></li>
+                <li><a v-on:click="cdlb='二级'">二级</a></li>
+                <li><a v-on:click="cdlb='三级'">三级</a></li>
+                <li><a v-on:click="cdlb='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="cdlb">
+            <p></p>
+          </div>
+
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">抗渗等级 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="ksdj='一级'">一级</a></li>
+                <li><a v-on:click="ksdj='二级'">二级</a></li>
+                <li><a v-on:click="ksdj='三级'">三级</a></li>
+                <li><a v-on:click="ksdj='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="ksdj">
+            <p></p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <h3> &nbsp 3. 电气专业概况 </h3>
+      <div class="row fill">
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">负荷等级 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="dfhdj='一级'">一级</a></li>
+                <li><a v-on:click="dfhdj='二级'">二级</a></li>
+                <li><a v-on:click="dfhdj='三级'">三级</a></li>
+                <li><a v-on:click="dfhdj='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="dfhdj">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">供电电源 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">防雷级别 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="fljb='一级'">一级</a></li>
+                <li><a v-on:click="fljb='二级'">二级</a></li>
+                <li><a v-on:click="fljb='三级'">三级</a></li>
+                <li><a v-on:click="fljb='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="fljb">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">照度标准 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">接地形式 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">配电方式 <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a v-on:click="pdfs='一级'">一级</a></li>
+                <li><a v-on:click="pdfs='二级'">二级</a></li>
+                <li><a v-on:click="pdfs='三级'">三级</a></li>
+                <li><a v-on:click="pdfs='四级'">四级</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid" :value="pdfs">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">弱电系统 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">系统指示 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
           </div>
         </div>
       </div>
+
+      <h3> &nbsp 4. 暖通专业概况 </h3>
+      <div class="row fill">
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">供冷冷源 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">供热热源</button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">空调面积 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">制冷负荷 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">通风系统 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <h3> &nbsp 5. 给排水专业概况 </h3>
+      <div class="row fill">
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">给水方式 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">市政水压 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">给水系统</button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">排水系统 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">消防系统 </button>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control is-valid">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- jquery vendor -->
@@ -415,12 +498,21 @@
   <script src="assets/js/scripts.js"></script>
 
   <script>
-  new Vue({
-    el: '#basic_information',
-    data: {
-        fhdj:''
-    }
-  })
+    new Vue({
+      el: '#basic_information',
+      data: {
+        fhdj: '',
+        rfdj: '',
+        fsdj: '',
+        kzdj: '',
+        sfld: '',
+        cdlb: '',
+        ksdj: '',
+        dfhdj: '',
+        fljb: '',
+        pdfs: '',
+      }
+    })
   </script>
 </body>
 
