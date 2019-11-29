@@ -207,14 +207,8 @@ router.post('/design-filemanager/tree/restorefile', (req) => {
     });
 })
 
-router.post('/design-filemanager/tree/restorefile', (req) => {
-    var isRestore = req.body.IsRestore.toString();
-    console.log(isRestore);
-    if (isRestore == "true") {
-        var mysql = 'update design-filemanager set DeleteOrNot = 1;';
-    }
-
-    connection.query(mysql, function (error, results) {
+router.get('/design-filemanager/tree', function (req, res) {
+    connection.query('select id, text, parent, type FROM design-filemanager where DeleteOrNot = 1;', function (error, results) {
         //查询错误，返回错误信息
         if (error) {
             results = {
@@ -225,9 +219,11 @@ router.post('/design-filemanager/tree/restorefile', (req) => {
             results = {
                 "status": "200",
                 "message": "Success",
+                "data": results
             }
             // console.log(Object.prototype.toString.call(results.data));
-            console.log(results);
+            console.log(results.data);
+            res.send(JSON.stringify(results.data));
         }
     });
 })
