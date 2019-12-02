@@ -35,15 +35,15 @@
     <div class="main card" id="basic_information">
 
       <div class="btn-group pull-right" role="group" aria-label="...">
-        <button type="button" class="btn btn-success">保存</button>
+        <button type="button" class="btn btn-success" v-on:click="general_submit">保存</button>
         <button type="button" class="btn btn-primary">打印</button>
         <button type="button" class="btn btn-danger">进入项目</button>
       </div>
 
-      
-      <div class="row fill" >
-          <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 1. 项目概况</h3>
-        <div class="col-md-4 col-lg-4" >
+
+      <div class="row fill">
+        <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 1. 项目概况</h3>
+        <div class="col-md-4 col-lg-4">
           <div class="input-group">
             <div class="input-group-btn">
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -161,7 +161,8 @@
       </div>
 
       <div class="row fill">
-          <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 2. 结构专业概况 </h3>
+        <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 2. 结构专业概况
+        </h3>
         <div class="col-md-4 col-lg-4">
           <div class="input-group">
             <div class="input-group-btn">
@@ -267,7 +268,8 @@
       </div>
 
       <div class="row fill">
-          <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 3. 电气专业概况 </h3>
+        <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 3. 电气专业概况
+        </h3>
         <div class="col-md-4 col-lg-4">
           <div class="input-group">
             <div class="input-group-btn">
@@ -374,9 +376,10 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row fill">
-          <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 4. 暖通专业概况 </h3>
+        <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 4. 暖通专业概况
+        </h3>
         <div class="col-md-4 col-lg-4">
           <div class="input-group">
             <div class="input-group-btn">
@@ -431,7 +434,8 @@
       </div>
 
       <div class="row fill">
-          <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 5. 给排水专业概况 </h3>
+        <h3 style="border-bottom: 1px solid #f3f3f3;padding: .75rem 1.25rem; border-color: green;"> &nbsp 5. 给排水专业概况
+        </h3>
         <div class="col-md-4 col-lg-4">
           <div class="input-group">
             <div class="input-group-btn">
@@ -509,6 +513,15 @@
         dfhdj: '',
         fljb: '',
         pdfs: '',
+      },
+      methods: {
+        general_submit: function () {
+          var b = '';
+          for (var w in this._data) {
+            b = b + w + '=' + this._data[w] + '\n';  // that's it, w是个string
+          }
+          alert(b);
+        }
       }
     })
   </script>
