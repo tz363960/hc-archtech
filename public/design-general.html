@@ -523,11 +523,11 @@
       },
       methods: {
         general_submit: function () {
-          var b = '';
+          var infoStr = [];
           for (var w in this._data) {
-            b = b + w + '=' + this._data[w] + '\n';  // that's it, w是个string
+            infoStr.push({[w]:this._data[w]});  // 使用对象作为键名
           }
-          alert(b);
+          console.log(infoStr);
         }
       }
     })
