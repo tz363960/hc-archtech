@@ -57,42 +57,13 @@
       </nav>
     </div>
   </div>
-  <!-- jquery vendor -->
+
   <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
-  <!-- nano scroller -->
   <script src="assets/js/lib/menubar/sidebar.js"></script>
   <script src="assets/js/lib/preloader/pace.min.js"></script>
-  <!-- sidebar -->
   <script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="assets/js/scripts.js"></script>
-  <script>
-    new Vue({
-      el: '#basic_information',
-      data: {
-        fhdj: '',
-        rfdj: '',
-        fsdj: '',
-        kzdj: '',
-        sfld: '',
-        cdlb: '',
-        ksdj: '',
-        dfhdj: '',
-        fljb: '',
-        pdfs: '',
-      },
-      methods: {
-        general_submit: function () {
-          var infoStr = [];
-          for (var w in this._data) {
-            infoStr.push({
-              [w]: this._data[w]
-            }); // 使用对象作为键名
-          }
-          console.log(infoStr);
-        }
-      }
-    })
-  </script>
+
 </body>
 
 </html>
