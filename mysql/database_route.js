@@ -161,7 +161,7 @@ router.post('/weekly-report/tree/restorefile', (req) => {
 })
 
 router.get('/design-filemanager/tree', function (req, res) {
-    connection.query('select id, text, parent, type FROM design-filemanager where DeleteOrNot = 1;', function (error, results) {
+    connection.query('select id, text, parent, type FROM `design-filemanager` where DeleteOrNot = 1;', function (error, results) {
         //查询错误，返回错误信息
         if (error) {
             results = {
@@ -184,7 +184,7 @@ router.get('/design-filemanager/tree', function (req, res) {
 router.post('/design-filemanager/tree/deletefile', (req) => {
     var idDelele = req.body.FileID.toString();
     console.log(idDelele);
-    var mysql = 'update design-filemanager set DeleteOrNot = 0 where id in(' + idDelele + ');';
+    var mysql = 'update `design-filemanager` set DeleteOrNot = 0 where id in(' + idDelele + ');';
     connection.query(mysql, function (error, results) {
         //查询错误，返回错误信息
         if (error) {
@@ -207,7 +207,7 @@ router.post('/design-filemanager/tree/restorefile', (req) => {
     var isRestore = req.body.IsRestore.toString();
     console.log(isRestore);
     if (isRestore == "true") {
-        var mysql = 'update design-filemanager set DeleteOrNot = 1;';
+        var mysql = 'update `design-filemanager` set DeleteOrNot = 1;';
     }
 
     connection.query(mysql, function (error, results) {
