@@ -70,7 +70,7 @@ Validator = {
                     console.log(data);
                     if (data.state == "match") {    //判断返回值，这里根据的业务内容可做调整
                         console.log(document.cookie);
-                        window.location.href = '/forge-table.html';   //指向登录的页面地址
+                        window.location.href = '/design-general.html';   //指向登录的页面地址
                     } else {
                         alert(data.message); //显示登录失败的原因
                         return false;
