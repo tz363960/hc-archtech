@@ -1,0 +1,153 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <!--
+  ArcGIS API for JavaScript, https://js.arcgis.com
+  For more information about the building-scene-layer-filter sample, read the original sample description at developers.arcgis.com.
+  https://developers.arcgis.com/javascript/latest/sample-code/building-scene-layer-filter/index.html
+  -->
+  <title>GIS+BIM</title>
+
+  <link href="https://js.arcgis.com/4.14/esri/themes/light/main.css" rel="stylesheet" type="text/css" />
+  <script src="https://js.arcgis.com/4.14/"></script>
+  <!-- <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+  <link rel="import" href="sidebar.html" id="siderbar"/> -->
+  <script>
+    require([
+      "esri/WebScene",
+      "esri/views/SceneView",
+      "esri/layers/BuildingSceneLayer",
+      "esri/widgets/Slider",
+      "esri/widgets/LayerList",
+      "esri/layers/support/BuildingFilter",
+      "esri/core/Collection"
+    ], function (
+      WebScene,
+      SceneView,
+      BuildingSceneLayer,
+      Slider,
+      LayerList,
+      BuildingFilter,
+      Collection
+    ) {
+      // Load webscene and display it in a SceneView
+      const webscene = new WebScene({
+        portalItem: {
+          id: "46e9c5b63ae04c9f91c57b311ed630ad"
+        }
+      });
+
+      const view = new SceneView({
+        container: "viewDiv",
+        map: webscene,
+        qualityProfile: "high"
+      });
+
+      let buildingLayer = null;
+
+      view
+        .when(function () {
+          // get the BuildingSceneLayer from the webscene
+          webscene.allLayers.forEach(function (layer) {
+            if (layer.title === "Administration building, Redlands") {
+              buildingLayer = layer;
+            }
+          });
+
+          // define a floor filter
+          const buildingFilter = new BuildingFilter({
+            filterBlocks: [{
+              // an SQL expression that filters using the BldgLevel field
+              filterExpression: "BldgLevel = 3",
+              filterMode: {
+                type: "solid"
+              }
+            }]
+          });
+          // set the filter in the filters array on the layer
+          buildingLayer.filters = [buildingFilter];
+          // specify which filter is the one that should be applied
+          buildingLayer.activeFilterId = buildingFilter.id;
+        })
+        .catch(console.error);
+
+      // define a slider that will filter floors
+      const floorSlider = new Slider({
+        container: "floorSelector",
+        min: 0,
+        max: 6,
+        precision: 0,
+        layout: "vertical",
+        steps: 1,
+        tickConfigs: [{
+          mode: "position",
+          values: [0, 1, 2, 3, 4, 5, 6],
+          labelsVisible: true
+        }],
+        values: [3]
+      });
+
+      // when the user changes the value, the filter is cloned and a new expression is set
+      floorSlider.watch("values", function (values) {
+        const filter = buildingLayer.filters.getItemAt(0).clone();
+        filter.filterBlocks.getItemAt(0).filterExpression =
+          "BldgLevel = " + values[0].toString();
+        buildingLayer.filters = [filter];
+        // when cloning the filter keeps the id, but this is set in case the filter was reset
+        buildingLayer.activeFilterId = filter.id;
+      });
+
+      // reset the filter by setting the activeFilterId to null
+      document
+        .getElementById("filterReset")
+        .addEventListener("click", function () {
+          buildingLayer.activeFilterId = null;
+        });
+
+      //   Add a layer list widget
+      const layerList = new LayerList({
+        view: view
+      });
+
+      view.ui.add(layerList, "bottom-left");
+      view.ui.add("menu", "top-right");
+    });
+  </script>
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    #menu {
+      width: 150px;
+      padding: 0.8em;
+    }
+
+    #floorSelector {
+      height: 100px;
+      margin: 1em 0 1em -40px;
+      background: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <script type="text/javascript">
+    document.write(siderbar.import.body.innerHTML);
+  </script> -->
+  <div id="viewDiv" class="esri-widget"></div>
+  <div id="menu" class="esri-widget">
+    <p>Filter by floor:</p>
+    <div id="floorSelector"></div>
+    <button id="filterReset" class="esri-button">Reset filter</button>
+  </div>
+</body>
+
+</html>
