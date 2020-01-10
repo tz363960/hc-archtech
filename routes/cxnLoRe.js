@@ -20,7 +20,7 @@ app.use(function (req, res, next) { //登录拦截器,这个一定要放在expre
     var url = req.path; //获取浏览器中当前访问的nodejs路由地址；
     var userCookies = req.cookies.ift; //获取客户端存取的cookie,userCookies为cookie的名称
 
-    if (url == '/forge-table.html') {
+    if (url == '/forge-table.html' || url == '/design-general.html') {
         var limitN = cookieLogin.tokens.length;
         if (limitN) {
             for (var i = 0; i < limitN; i++) {
