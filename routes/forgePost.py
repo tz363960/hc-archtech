@@ -25,6 +25,7 @@ class getToken:
         response0 = requests.post(url, headers=header0, data=mData)
         return response0
 
+
     # 传入bucketName
     def post_bucket_name(self, token_number):
         tempToken = re.findall('"(.*?)"', token_number)  # response0.text
